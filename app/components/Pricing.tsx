@@ -34,7 +34,7 @@ export default function Pricing() {
   ];
 
   return (
-    <section id="pricing" className="relative w-full min-h-screen lg:h-screen bg-[#e8e6e0] py-16 sm:py-16 px-4 sm:px-6 lg:px-20 flex items-center">
+    <section id="pricing" className="relative w-full min-h-screen  bg-[#e8e6e0] py-16 sm:py-16 px-4 sm:px-6 lg:px-20 flex items-center">
       <div className="max-w-7xl mx-auto w-full">
         {/* Title */}
         <h2 className="text-3xl sm:text-4xl lg:text-6xl font-light text-[#3a3a35] mb-8 sm:mb-12 lg:mb-16">
