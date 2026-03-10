@@ -130,8 +130,14 @@ export default function RetreatsPage() {
                     
                     {/* Price Badge */}
                     <div className="absolute top-4 right-4 sm:top-6 sm:right-6 bg-[#c9b896] text-[#3a3a35] px-4 py-2 sm:px-6 sm:py-3">
-                      <div className="text-xs sm:text-sm font-light">{t.retreatsPage?.from || 'от'}</div>
-                      <div className="text-lg sm:text-2xl font-light">{retreat.price}</div>
+                      {retreat.price?.includes('€') && (
+                        <div className="text-xs sm:text-sm font-light">{t.retreatsPage?.from || 'от'}</div>
+                      )}
+                      <div className="text-lg sm:text-2xl font-light">
+                        {retreat.price?.includes('/') 
+                          ? retreat.price.split('/').map(s => s.trim())[language === 'ru' ? 0 : 1] || retreat.price
+                          : retreat.price}
+                      </div>
                     </div>
 
                     {/* Dates */}

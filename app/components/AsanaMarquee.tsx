@@ -8,7 +8,6 @@ export default function AsanaMarquee() {
 
   const asanas = [
     'Virasana',
-    'Kakasana', 
     'Bhujangasana',
     'Halasana',
     'Padmasana',

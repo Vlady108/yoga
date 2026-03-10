@@ -3,7 +3,7 @@ export const en = {
     logo: "YC",
     nav: {
       home: "Home",
-      program: "Program",
+      program: "Classes",
       author: "About Vladislav",
       retreats: "Retreats",
       pricing: "Pricing",
@@ -322,6 +322,7 @@ export const en = {
     privateTitle: "1:1 Yoga Classes",
     privateDescription: "1:1 is a custom designed class in accordance with student's goals and aspirations. Personal guidance and asana alignment. An opportunity to discuss all related open issues with the teacher directly.",
     privateSession: "On request",
+    privatePrice: "Custom Price",
     privateDetails: "Fully customized practice\nPersonal attention and alignment\nFlexible scheduling",
     coachingTag: "Coaching",
     coachingTitle: "Vedic Psychology",

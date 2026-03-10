@@ -304,7 +304,7 @@ export default function CoursesPage() {
               <div className="border-t border-[#3a3a35]/10 pt-4 sm:pt-6">
                 <div className="flex justify-between items-center">
                   <span className="text-xs sm:text-sm text-[#3a3a35]/60">{t.coursesPage?.privateSession}</span>
-                  <span className="text-xl sm:text-2xl font-light text-[#3a3a35]">€150</span>
+                  <span className="text-base sm:text-lg font-light text-[#3a3a35]">{t.coursesPage?.privatePrice}</span>
                 </div>
               </div>
 
