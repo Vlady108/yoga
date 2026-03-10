@@ -5,7 +5,7 @@ export const ru = {
       home: "Главная",
       program: "Занятия",
       author: "О Владиславе",
-      retreats: "Ретриты",
+      retreats: "Ретриты и Мероприятия",
       pricing: "Стоимость",
       reviews: "Отзывы",
       contacts: "Контакты",
@@ -354,7 +354,7 @@ export const ru = {
   },
   retreatsPage: {
     subtitle: "Йога Ретриты",
-    title: "Ретриты",
+    title: "Ретриты и Мероприятия",
     description: "Погрузитесь в трансформирующий опыт йоги в священных местах мира",
     loading: "Загрузка...",
     noRetreats: "Скоро здесь появятся новые ретриты",

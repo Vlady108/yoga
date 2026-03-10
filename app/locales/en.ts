@@ -5,7 +5,7 @@ export const en = {
       home: "Home",
       program: "Classes",
       author: "About Vladislav",
-      retreats: "Retreats",
+      retreats: "Retreats & Events",
       pricing: "Pricing",
       reviews: "Reviews",
       contacts: "Contacts",
@@ -354,7 +354,7 @@ export const en = {
   },
   retreatsPage: {
     subtitle: "Yoga Retreats",
-    title: "Retreats",
+    title: "Retreats & Events",
     description: "Immerse yourself in a transformative yoga experience in sacred places around the world",
     loading: "Loading...",
     noRetreats: "New retreats coming soon",
