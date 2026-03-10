@@ -9,14 +9,17 @@ export default function AboutPage() {
 
   return (
     <div className="bg-[#e8e6e0]">
-      {/* Hero Section with Image */}
+      {/* Hero Section with Video */}
       <section className="relative w-full h-[70vh] sm:h-screen overflow-hidden">
-        <Image
-          src="/images/about/IMG_6143.JPG"
-          alt="Yoga practice"
-          fill
-          className="object-cover brightness-75"
-        />
+        <video
+          autoPlay
+          loop
+          muted
+          playsInline
+          className="absolute inset-0 w-full h-full object-cover brightness-75"
+        >
+          <source src="/video/yoga.mp4" type="video/mp4" />
+        </video>
         
         {/* Overlay Content */}
         <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/30 to-transparent" />
