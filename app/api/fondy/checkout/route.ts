@@ -50,9 +50,14 @@ export async function POST(request: NextRequest) {
         ? `Retreat booking: ${retreatTitle}` 
         : `Yoga service: ${serviceType || 'General'}`);
 
-    // Get base URL from request
-    const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || 
-      `${request.nextUrl.protocol}//${request.nextUrl.host}`;
+    // Get base URL from request - ensure production URL is used on Vercel
+    const baseUrl = process.env.NEXT_PUBLIC_BASE_URL && process.env.NEXT_PUBLIC_BASE_URL !== 'http://localhost:3000'
+      ? process.env.NEXT_PUBLIC_BASE_URL
+      : process.env.VERCEL_URL 
+        ? `https://${process.env.VERCEL_URL}`
+        : `${request.nextUrl.protocol}//${request.nextUrl.host}`;
+    
+    console.log('Base URL for callbacks:', baseUrl);
 
     // Create payment in Fondy
     console.log('Creating Fondy payment with params:', {
