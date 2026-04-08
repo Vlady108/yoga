@@ -67,7 +67,7 @@ export async function POST(request: NextRequest) {
       currency,
       email: clientEmail,
     });
-    
+    // Log environment variables for debugging
     const fondyResult = await createFondyPayment({
       orderId,
       orderDescription,
