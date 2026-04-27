@@ -214,6 +214,24 @@ export default function RetreatDetail() {
                     {retreat.description[language].substring(0, 150)}...
                   </p>
 
+                  {/* Book Button */}
+                  <div className="mb-6 sm:mb-8">
+                    <a
+                      href="https://t.me/Vlady_108"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      onClick={() => {
+                        if (typeof fbq !== 'undefined') fbq('track', 'Lead');
+                      }}
+                      className="inline-flex items-center justify-center gap-3 w-full sm:w-auto px-8 py-4 bg-[#c9b896] text-[#3a3a35] hover:bg-[#3a3a35] hover:text-white transition-all duration-300 font-medium tracking-wider text-sm rounded-xl shadow-md hover:shadow-lg"
+                    >
+                      <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                        <path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm5.562 8.248-1.97 9.289c-.145.658-.537.818-1.084.508l-3-2.21-1.447 1.394c-.16.16-.295.295-.605.295l.213-3.053 5.56-5.023c.242-.213-.054-.333-.373-.12L7.433 14.41l-2.962-.924c-.643-.204-.657-.643.136-.953l11.57-4.461c.537-.194 1.006.131.385.176z"/>
+                      </svg>
+                      {language === 'ru' ? 'Забронировать в Telegram' : 'Book via Telegram'}
+                    </a>
+                  </div>
+
                   {/* Info Grid */}
                   <div className="grid grid-cols-1 gap-3 sm:gap-4 mb-6 sm:mb-8">
                     <div className="flex items-center gap-3 p-3 sm:p-4 bg-white rounded-lg sm:rounded-xl shadow-sm border border-[#e8e6e0]">
@@ -328,9 +346,9 @@ export default function RetreatDetail() {
             <div className="mb-8 sm:mb-12 p-5 sm:p-8 bg-white/60 backdrop-blur-sm border border-[#3a3a35]/10">
               <h2 className="text-xl sm:text-2xl font-light text-[#3a3a35] mb-4 sm:mb-6">{t.retreatsPage?.pricing || 'Стоимость'}</h2>
               <div className="text-3xl sm:text-4xl font-light text-[#3a3a35] mb-4 sm:mb-6">{retreat.price}</div>
-              
+
               {retreat.pricingTiers && retreat.pricingTiers.length > 0 && (
-                <div className="space-y-2 sm:space-y-3">
+                <div className="space-y-2 sm:space-y-3 mb-6">
                   {retreat.pricingTiers.map((tier, index) => (
                     <div key={index} className="flex justify-between items-center py-2 sm:py-3 border-t border-[#3a3a35]/10">
                       <span className="text-xs sm:text-sm text-[#3a3a35]/70">{tier.deadline}</span>
@@ -339,6 +357,21 @@ export default function RetreatDetail() {
                   ))}
                 </div>
               )}
+
+              <a
+                href="https://t.me/Vlady_108"
+                target="_blank"
+                rel="noopener noreferrer"
+                onClick={() => {
+                  if (typeof fbq !== 'undefined') fbq('track', 'Lead');
+                }}
+                className="inline-flex items-center justify-center gap-3 w-full py-4 bg-[#c9b896] text-[#3a3a35] hover:bg-[#3a3a35] hover:text-white transition-all duration-300 font-medium tracking-wider text-sm rounded-xl shadow-md hover:shadow-lg mt-2"
+              >
+                <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                  <path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm5.562 8.248-1.97 9.289c-.145.658-.537.818-1.084.508l-3-2.21-1.447 1.394c-.16.16-.295.295-.605.295l.213-3.053 5.56-5.023c.242-.213-.054-.333-.373-.12L7.433 14.41l-2.962-.924c-.643-.204-.657-.643.136-.953l11.57-4.461c.537-.194 1.006.131.385.176z"/>
+                </svg>
+                {language === 'ru' ? 'Забронировать в Telegram' : 'Book via Telegram'}
+              </a>
             </div>
 
             {/* Description */}

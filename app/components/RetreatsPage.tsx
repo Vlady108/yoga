@@ -206,15 +206,31 @@ export default function RetreatsPage() {
                     )}
 
                     {/* CTA */}
-                    <Link
-                      href={`/retreats/${retreat._id}`}
-                      className="inline-flex items-center gap-2 sm:gap-3 px-5 sm:px-8 py-3 sm:py-4 bg-[#3a3a35] text-white hover:bg-[#c9b896] hover:text-[#3a3a35] transition-all duration-300 font-light tracking-wider text-xs sm:text-sm group"
-                    >
-                      {t.retreatsPage?.learnMore || 'Подробнее'}
-                      <svg className="w-3 h-3 sm:w-4 sm:h-4 group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M9 5l7 7-7 7" />
-                      </svg>
-                    </Link>
+                    <div className="flex flex-wrap gap-3">
+                      <Link
+                        href={`/retreats/${retreat._id}`}
+                        className="inline-flex items-center gap-2 sm:gap-3 px-5 sm:px-8 py-3 sm:py-4 bg-[#3a3a35] text-white hover:bg-[#c9b896] hover:text-[#3a3a35] transition-all duration-300 font-light tracking-wider text-xs sm:text-sm group"
+                      >
+                        {t.retreatsPage?.learnMore || 'Подробнее'}
+                        <svg className="w-3 h-3 sm:w-4 sm:h-4 group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M9 5l7 7-7 7" />
+                        </svg>
+                      </Link>
+                      <a
+                        href="https://t.me/Vlady_108"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        onClick={() => {
+                          if (typeof fbq !== 'undefined') fbq('track', 'Lead');
+                        }}
+                        className="inline-flex items-center gap-2 sm:gap-3 px-5 sm:px-8 py-3 sm:py-4 bg-[#c9b896] text-[#3a3a35] hover:bg-[#3a3a35] hover:text-white transition-all duration-300 font-light tracking-wider text-xs sm:text-sm group"
+                      >
+                        <svg className="w-3 h-3 sm:w-4 sm:h-4" fill="currentColor" viewBox="0 0 24 24">
+                          <path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm5.562 8.248-1.97 9.289c-.145.658-.537.818-1.084.508l-3-2.21-1.447 1.394c-.16.16-.295.295-.605.295l.213-3.053 5.56-5.023c.242-.213-.054-.333-.373-.12L7.433 14.41l-2.962-.924c-.643-.204-.657-.643.136-.953l11.57-4.461c.537-.194 1.006.131.385.176z"/>
+                        </svg>
+                        {language === 'ru' ? 'Забронировать' : 'Book now'}
+                      </a>
+                    </div>
                   </div>
                 </div>
               ))}
