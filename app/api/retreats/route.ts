@@ -1,6 +1,7 @@
-import { NextResponse } from 'next/server';
+import { NextRequest, NextResponse } from 'next/server';
 import dbConnect from '@/lib/mongodb';
 import Retreat from '@/models/Retreat';
+import { requireAuth } from '@/lib/auth';
 
 export async function GET() {
   try {
@@ -16,7 +17,10 @@ export async function GET() {
   }
 }
 
-export async function POST(request: Request) {
+export async function POST(request: NextRequest) {
+  const authError = requireAuth(request);
+  if (authError) return authError;
+
   try {
     await dbConnect();
     const body = await request.json();
