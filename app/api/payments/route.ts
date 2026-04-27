@@ -55,10 +55,14 @@ export async function GET(request: NextRequest) {
 }
 
 export async function POST(request: NextRequest) {
+  if (!verifyAuth(request)) {
+    return NextResponse.json({ error: 'Unauthorized' }, { status: 401 });
+  }
+
   try {
     await dbConnect();
     const body = await request.json();
-    
+
     // Validate required fields
     if (!body.clientName || !body.clientEmail || !body.amount) {
       return NextResponse.json(
@@ -66,7 +70,7 @@ export async function POST(request: NextRequest) {
         { status: 400 }
       );
     }
-    
+
     const payment = await Payment.create(body);
     
     return NextResponse.json(
