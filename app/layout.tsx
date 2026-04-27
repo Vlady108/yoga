@@ -4,7 +4,7 @@ import Script from "next/script";
 import "./globals.css";
 import { LanguageProvider } from "./context/LanguageContext";
 
-const META_PIXEL_ID = "YOUR_PIXEL_ID"; // TODO: заменить на реальный Pixel ID
+const META_PIXEL_ID = "24753688927550462";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
