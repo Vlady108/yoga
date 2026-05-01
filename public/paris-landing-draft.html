@@ -19,32 +19,22 @@
     p  { font-size: 16px; line-height: 1.75; color: #333; margin-bottom: 14px; }
     p:last-child { margin-bottom: 0; }
     .eyebrow { font-family: monospace; font-size: 11px; text-transform: uppercase; letter-spacing: 0.15em; color: #888; margin-bottom: 14px; display: block; }
-
-    /* Hero */
     .hero { padding: 0; }
     .hero-body { padding: 40px 24px 48px; }
     .hero-meta { display: flex; gap: 24px; flex-wrap: wrap; margin-top: 24px; }
     .hero-meta-item { border-left: 2px solid #111; padding-left: 12px; }
     .hero-meta-item .hm-label { font-family: monospace; font-size: 10px; text-transform: uppercase; letter-spacing: 0.1em; color: #888; }
     .hero-meta-item .hm-val   { font-size: 15px; margin-top: 2px; }
-
-    /* Program */
     .program-item { border: 1px solid #ddd; padding: 20px; margin-bottom: 14px; }
     .program-item .pi-num { font-family: monospace; font-size: 11px; color: #888; margin-bottom: 6px; }
     .program-item .pi-duration { font-size: 12px; color: #888; margin-top: 6px; font-family: monospace; }
-
-    /* Experts */
     .expert { display: grid; grid-template-columns: 120px 1fr; gap: 24px; align-items: start; margin-bottom: 40px; }
     .expert:last-child { margin-bottom: 0; }
     .expert-stats { margin-top: 12px; display: flex; flex-wrap: wrap; gap: 8px; }
     .stat { background: #f5f5f5; padding: 6px 12px; font-size: 13px; font-family: monospace; }
-
-    /* Reviews */
     .reviews { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
     .review { border: 1px solid #e0e0e0; padding: 18px; font-size: 14px; line-height: 1.65; }
     .review-author { font-family: monospace; font-size: 11px; color: #888; margin-top: 10px; }
-
-    /* Form */
     .form-wrap { background: #f7f7f7; padding: 32px 24px; }
     .form-group { margin-bottom: 16px; }
     label { display: block; font-size: 13px; color: #666; margin-bottom: 6px; font-family: monospace; text-transform: uppercase; letter-spacing: 0.08em; }
@@ -53,25 +43,14 @@
     .btn-primary   { background: #111; color: #fff; }
     .btn-secondary { background: #fff; color: #111; border: 2px solid #111; }
 
-    /* ── Editable fields ── */
-    [data-field] {
-      cursor: pointer;
-      border-radius: 2px;
-      transition: background 0.15s;
-      position: relative;
-    }
+    /* Editable */
+    [data-field] { cursor: pointer; border-radius: 2px; transition: background 0.15s; position: relative; }
     [data-field]:hover { background: #fffbe6; outline: 1px dashed #f0c040; }
     [data-field]:hover::after {
-      content: '✏️ нажми чтобы изменить';
-      position: absolute;
-      top: -22px; left: 0;
-      font-size: 10px;
-      font-family: monospace;
-      color: #f0a000;
-      background: #fff;
-      padding: 2px 6px;
-      border: 1px solid #f0c040;
-      white-space: nowrap;
+      content: '✏️';
+      position: absolute; top: -18px; right: 0;
+      font-size: 12px; background: #fff;
+      padding: 1px 4px; border: 1px solid #f0c040;
       z-index: 10;
     }
     [data-field].editing { outline: 2px solid #111; background: #fffbe6; cursor: text; }
@@ -81,17 +60,11 @@
       position: fixed; bottom: 0; left: 0; right: 0;
       background: #111; color: #fff;
       display: flex; align-items: center; justify-content: space-between;
-      padding: 14px 24px;
-      font-family: monospace; font-size: 14px;
-      transform: translateY(100%);
-      transition: transform 0.2s;
-      z-index: 100;
+      padding: 14px 24px; font-family: monospace; font-size: 14px;
+      transform: translateY(100%); transition: transform 0.2s; z-index: 100;
     }
     #save-bar.visible { transform: translateY(0); }
-    #save-bar button {
-      background: #fff; color: #111; border: none;
-      padding: 8px 20px; font-size: 14px; cursor: pointer; font-family: monospace;
-    }
+    #save-bar button { background: #fff; color: #111; border: none; padding: 8px 20px; font-size: 14px; cursor: pointer; font-family: monospace; }
     #save-bar button:hover { background: #f0f0f0; }
     #save-status { font-size: 12px; color: #aaa; }
 
@@ -108,9 +81,9 @@
 <section class="hero">
   <div class="placeholder-img" style="height:360px;">[ ФОТО — атмосфера практики ]</div>
   <div class="hero-body">
-    <span class="eyebrow">Париж · Май 2026</span>
-    <h1>Три часа, которые изменят то, как вы живёте в своём теле</h1>
-    <p style="font-size:18px;color:#444;line-height:1.7;">Живой интенсив по йоге, дыханию и работе с энергией. Два практика с 40 годами совокупного опыта — в одном зале, в один день.</p>
+    <span class="eyebrow" data-field="hero_eyebrow">Париж · Май 2026</span>
+    <h1 data-field="hero_title">Три часа, которые изменят то, как вы живёте в своём теле</h1>
+    <p style="font-size:18px;color:#444;line-height:1.7;" data-field="hero_desc">Живой интенсив по йоге, дыханию и работе с энергией. Два практика с 40 годами совокупного опыта — в одном зале, в один день.</p>
     <div class="hero-meta">
       <div class="hero-meta-item">
         <div class="hm-label">Дата</div>
@@ -122,7 +95,7 @@
       </div>
       <div class="hero-meta-item">
         <div class="hm-label">Формат</div>
-        <div class="hm-val">~3 часа · живое</div>
+        <div class="hm-val" data-field="format">~3 часа · живое</div>
       </div>
       <div class="hero-meta-item">
         <div class="hm-label">Стоимость</div>
@@ -134,52 +107,52 @@
 
 <!-- БОЛЬ -->
 <section>
-  <span class="eyebrow">Знакомо?</span>
-  <h2>Вы занимаетесь йогой — но что-то всё равно не на месте</h2>
-  <blockquote style="border-left:3px solid #111;padding:16px 20px;margin:24px 0;font-size:17px;line-height:1.7;font-style:italic;color:#222;">"Хожу на классы уже год. Физически стало лучше. Но внутри — как будто топчусь на месте."</blockquote>
-  <p>Большинство практик работают с телом. Мало кто работает с тем, что за ним — с энергией, дыханием, тем слоем, который и определяет как вы себя чувствуете, принимаете решения, выстраиваете отношения.</p>
-  <p>Этот интенсив — про тот самый слой. Не теория. Не лекция ради лекции. Три часа практики, после которых вы уйдёте с инструментом, который можно использовать на следующий день.</p>
+  <span class="eyebrow" data-field="pain_eyebrow">Знакомо?</span>
+  <h2 data-field="pain_title">Вы занимаетесь йогой — но что-то всё равно не на месте</h2>
+  <blockquote style="border-left:3px solid #111;padding:16px 20px;margin:24px 0;font-size:17px;line-height:1.7;font-style:italic;color:#222;" data-field="pain_quote">"Хожу на классы уже год. Физически стало лучше. Но внутри — как будто топчусь на месте."</blockquote>
+  <p data-field="pain_p1">Большинство практик работают с телом. Мало кто работает с тем, что за ним — с энергией, дыханием, тем слоем, который и определяет как вы себя чувствуете, принимаете решения, выстраиваете отношения.</p>
+  <p data-field="pain_p2">Этот интенсив — про тот самый слой. Не теория. Не лекция ради лекции. Три часа практики, после которых вы уйдёте с инструментом, который можно использовать на следующий день.</p>
 </section>
 
 <!-- ПРОГРАММА -->
 <section>
-  <span class="eyebrow">Программа</span>
-  <h2>Что происходит за три часа</h2>
+  <span class="eyebrow" data-field="prog_eyebrow">Программа</span>
+  <h2 data-field="prog_title">Что происходит за три часа</h2>
   <div class="program-item">
-    <div class="pi-num">ЧАСТЬ 1</div>
-    <h3>Понять, что происходит в теле</h3>
-    <p>Лекция о природе праны и энергетических центрах. Пранаяма, бандхи, дришти, мудры — без эзотерики, на живом языке.</p>
-    <div class="pi-duration">~1 час · теория + демонстрация</div>
+    <div class="pi-num" data-field="prog1_num">ЧАСТЬ 1</div>
+    <h3 data-field="prog1_title">Понять, что происходит в теле</h3>
+    <p data-field="prog1_text">Лекция о природе праны и энергетических центрах. Пранаяма, бандхи, дришти, мудры — без эзотерики, на живом языке.</p>
+    <div class="pi-duration" data-field="prog1_duration">~1 час · теория + демонстрация</div>
   </div>
   <div class="program-item">
-    <div class="pi-num">ПЕРЕРЫВ</div>
-    <h3>Пауза и живое общение</h3>
-    <p>15 минут — чай, вопросы, знакомство с участниками.</p>
-    <div class="pi-duration">15 минут</div>
+    <div class="pi-num" data-field="prog2_num">ПЕРЕРЫВ</div>
+    <h3 data-field="prog2_title">Пауза и живое общение</h3>
+    <p data-field="prog2_text">15 минут — чай, вопросы, знакомство с участниками.</p>
+    <div class="pi-duration" data-field="prog2_duration">15 минут</div>
   </div>
   <div class="program-item">
-    <div class="pi-num">ЧАСТЬ 2</div>
-    <h3>Почувствовать и активировать</h3>
-    <p>Телесная практика с дыхательными техниками. Активация кундалини-энергии — не как концепции, а как живого физического опыта.</p>
-    <div class="pi-duration">~1.5 часа · практика</div>
+    <div class="pi-num" data-field="prog3_num">ЧАСТЬ 2</div>
+    <h3 data-field="prog3_title">Почувствовать и активировать</h3>
+    <p data-field="prog3_text">Телесная практика с дыхательными техниками. Активация кундалини-энергии — не как концепции, а как живого физического опыта.</p>
+    <div class="pi-duration" data-field="prog3_duration">~1.5 часа · практика</div>
   </div>
 </section>
 
 <!-- ЭКСПЕРТЫ -->
 <section>
-  <span class="eyebrow">Кто ведёт</span>
-  <h2>Два практика. Разные традиции. Один результат.</h2>
-  <p style="margin-bottom:32px;">Когда встречаются два человека с таким опытом — это редкость. Обычно такой формат доступен только на многодневных ретритах за €1500+.</p>
+  <span class="eyebrow" data-field="exp_eyebrow">Кто ведёт</span>
+  <h2 data-field="exp_title">Два практика. Разные традиции. Один результат.</h2>
+  <p style="margin-bottom:32px;" data-field="exp_intro">Когда встречаются два человека с таким опытом — это редкость. Обычно такой формат доступен только на многодневных ретритах за €1500+.</p>
 
   <div class="expert">
     <div><div class="placeholder-img" style="width:120px;height:150px;">[ фото Влада ]</div></div>
     <div>
-      <h3>Владислав Чангелия</h3>
-      <p>Бывший профессиональный футболист — чемпион четырёх стран, двукратный лучший вратарь Вены. 18 лет йоги, 1000+ часов международных teacher training. Высшая тантрическая инициация в традиции Shaktipat Parampara, годы изучения священных текстов у Гуру в Индии.</p>
+      <h3 data-field="vlad_name">Владислав Чангелия</h3>
+      <p data-field="vlad_bio">Бывший профессиональный футболист — чемпион четырёх стран, двукратный лучший вратарь Вены. 18 лет йоги, 1000+ часов международных teacher training. Высшая тантрическая инициация в традиции Shaktipat Parampara, годы изучения священных текстов у Гуру в Индии.</p>
       <div class="expert-stats">
-        <span class="stat">18 лет практики</span>
-        <span class="stat">1000+ ч. обучения</span>
-        <span class="stat">Ретриты в 5 странах</span>
+        <span class="stat" data-field="vlad_stat1">18 лет практики</span>
+        <span class="stat" data-field="vlad_stat2">1000+ ч. обучения</span>
+        <span class="stat" data-field="vlad_stat3">Ретриты в 5 странах</span>
       </div>
     </div>
   </div>
@@ -187,12 +160,12 @@
   <div class="expert">
     <div><div class="placeholder-img" style="width:120px;height:150px;">[ фото Даши ]</div></div>
     <div>
-      <h3>Дарья Смирнова</h3>
+      <h3 data-field="dasha_name">Дарья Смирнова</h3>
       <p data-field="dasha_bio">Основательница школы энергопрактики "Сандхи-Хилинг". Более 20 лет изучает ведические писания, обучалась в Индии у учителей древней традиции. 1000+ учеников, авторская методика. Специализация: крийя-йога, кундалини, работа с чакрами.</p>
       <div class="expert-stats">
-        <span class="stat">20+ лет опыта</span>
-        <span class="stat">1000+ учеников</span>
-        <span class="stat">Школа 4 года</span>
+        <span class="stat" data-field="dasha_stat1">20+ лет опыта</span>
+        <span class="stat" data-field="dasha_stat2">1000+ учеников</span>
+        <span class="stat" data-field="dasha_stat3">Школа 4 года</span>
       </div>
     </div>
   </div>
@@ -200,16 +173,16 @@
 
 <!-- ВИДЕО -->
 <section>
-  <span class="eyebrow">Атмосфера</span>
-  <h2>Как это выглядит вживую</h2>
+  <span class="eyebrow" data-field="video_eyebrow">Атмосфера</span>
+  <h2 data-field="video_title">Как это выглядит вживую</h2>
   <div class="placeholder-video" style="height:240px;margin-bottom:14px;">[ ВИДЕО — фрагмент с ретрита ]</div>
   <div class="placeholder-video" style="height:180px;">[ ВИДЕО — Влад или Даша о формате ]</div>
 </section>
 
 <!-- ОТЗЫВЫ -->
 <section>
-  <span class="eyebrow">Участники говорят</span>
-  <h2>После ретритов и семинаров</h2>
+  <span class="eyebrow" data-field="rev_eyebrow">Участники говорят</span>
+  <h2 data-field="rev_title">После ретритов и семинаров</h2>
   <div class="reviews">
     <div class="review">
       <div class="placeholder-video" style="height:130px;margin-bottom:12px;">[ видео-отзыв ]</div>
@@ -232,20 +205,20 @@
 
 <!-- ДЛЯ КОГО -->
 <section>
-  <span class="eyebrow">Для кого</span>
-  <h2>Вам сюда, если</h2>
-  <p>✓ &nbsp;Вы уже занимаетесь йогой и хотите идти глубже</p>
-  <p>✓ &nbsp;Физических практик недостаточно — хочется работы с энергией</p>
-  <p>✓ &nbsp;Вы в Европе и искали живой формат с настоящими практиками</p>
-  <p>✓ &nbsp;Вы новичок, который хочет начать сразу с правильной базы</p>
-  <p style="margin-top:20px;color:#888;font-size:14px;">Группа небольшая — каждый получает внимание обоих ведущих.</p>
+  <span class="eyebrow" data-field="for_eyebrow">Для кого</span>
+  <h2 data-field="for_title">Вам сюда, если</h2>
+  <p data-field="for_p1">✓ &nbsp;Вы уже занимаетесь йогой и хотите идти глубже</p>
+  <p data-field="for_p2">✓ &nbsp;Физических практик недостаточно — хочется работы с энергией</p>
+  <p data-field="for_p3">✓ &nbsp;Вы в Европе и искали живой формат с настоящими практиками</p>
+  <p data-field="for_p4">✓ &nbsp;Вы новичок, который хочет начать сразу с правильной базы</p>
+  <p style="margin-top:20px;color:#888;font-size:14px;" data-field="for_note">Группа небольшая — каждый получает внимание обоих ведущих.</p>
 </section>
 
 <!-- РЕГИСТРАЦИЯ -->
 <section id="register">
-  <span class="eyebrow">Место</span>
-  <h2>Хочу участвовать</h2>
-  <p>Оставьте имя и номер — мы напишем, ответим на вопросы и забронируем место.</p>
+  <span class="eyebrow" data-field="reg_eyebrow">Место</span>
+  <h2 data-field="reg_title">Хочу участвовать</h2>
+  <p data-field="reg_desc">Оставьте имя и номер — мы напишем, ответим на вопросы и забронируем место.</p>
   <div class="form-wrap">
     <form onsubmit="return false;">
       <div class="form-group">
@@ -256,17 +229,17 @@
         <label>Телефон / WhatsApp</label>
         <input type="tel" placeholder="+33 или другой номер" />
       </div>
-      <button type="submit" class="btn btn-primary">Забронировать место →</button>
+      <button type="submit" class="btn btn-primary" data-field="reg_btn">Забронировать место →</button>
     </form>
-    <p style="text-align:center;font-family:monospace;font-size:12px;color:#888;margin-top:12px;">Мест ограничено · Небольшая группа</p>
+    <p style="text-align:center;font-family:monospace;font-size:12px;color:#888;margin-top:12px;" data-field="reg_urgency">Мест ограничено · Небольшая группа</p>
   </div>
-  <p style="font-size:14px;color:#888;margin:20px 0 12px;">Или напишите напрямую:</p>
-  <a href="https://t.me/Vlady_108" class="btn btn-primary">Telegram — @Vlady_108</a>
-  <a href="https://t.me/dawa_wonder" class="btn btn-secondary">Telegram — @dawa_wonder (Даша)</a>
+  <p style="font-size:14px;color:#888;margin:20px 0 12px;" data-field="reg_or">Или напишите напрямую:</p>
+  <a href="https://t.me/Vlady_108" class="btn btn-primary" data-field="tg_btn1">Telegram — @Vlady_108</a>
+  <a href="https://t.me/dawa_wonder" class="btn btn-secondary" data-field="tg_btn2">Telegram — @dawa_wonder (Даша)</a>
 </section>
 
 <section style="text-align:center;padding:24px;border-top:1px solid #e8e8e8;">
-  <p style="font-size:12px;color:#aaa;font-family:monospace;">vladyoga.com · @Vlady_108</p>
+  <p style="font-size:12px;color:#aaa;font-family:monospace;" data-field="footer_text">vladyoga.com · @Vlady_108</p>
 </section>
 
 <!-- SAVE BAR -->
@@ -283,7 +256,6 @@
   let fields = {};
   let dirty = false;
 
-  // Load saved data on page load
   async function loadFields() {
     try {
       const res = await fetch('/api/landing-draft?slug=' + SLUG);
@@ -298,15 +270,13 @@
     } catch(e) { console.log('Could not load draft:', e); }
   }
 
-  // Make fields editable on click
   document.querySelectorAll('[data-field]').forEach(el => {
-    el.addEventListener('click', function() {
+    el.addEventListener('click', function(e) {
+      e.preventDefault();
       if (this.classList.contains('editing')) return;
       this.classList.add('editing');
       this.contentEditable = 'true';
       this.focus();
-
-      // Select all text
       const range = document.createRange();
       range.selectNodeContents(this);
       const sel = window.getSelection();
@@ -326,14 +296,8 @@
     });
 
     el.addEventListener('keydown', function(e) {
-      if (e.key === 'Enter' && !e.shiftKey) {
-        e.preventDefault();
-        this.blur();
-      }
-      if (e.key === 'Escape') {
-        this.contentEditable = 'false';
-        this.classList.remove('editing');
-      }
+      if (e.key === 'Enter' && !e.shiftKey) { e.preventDefault(); this.blur(); }
+      if (e.key === 'Escape') { this.contentEditable = 'false'; this.classList.remove('editing'); }
     });
   });
 
@@ -369,7 +333,6 @@
     btn.disabled = false;
   }
 
-  // Warn before leaving with unsaved changes
   window.addEventListener('beforeunload', e => {
     if (dirty) { e.preventDefault(); e.returnValue = ''; }
   });
