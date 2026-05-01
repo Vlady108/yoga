@@ -3,72 +3,97 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Йога-интенсив в Париже — Влад и Даша</title>
+  <title>Йога-интенсив в Париже — черновик</title>
   <style>
     * { box-sizing: border-box; margin: 0; padding: 0; }
-    body { font-family: Georgia, serif; background: #fff; color: #111; max-width: 680px; margin: 0 auto; padding: 0 0 60px; }
+    body { font-family: Georgia, serif; background: #fff; color: #111; max-width: 680px; margin: 0 auto; padding: 0 0 80px; }
 
-    /* helpers */
-    .placeholder-img  { background: #f0f0f0; border: 2px dashed #bbb; display: flex; align-items: center; justify-content: center; color: #999; font-family: monospace; font-size: 12px; text-align: center; padding: 12px; }
-    .placeholder-video{ background: #e8e8e8; border: 2px dashed #999; display: flex; align-items: center; justify-content: center; color: #666; font-family: monospace; font-size: 12px; text-align: center; padding: 12px; }
+    .placeholder-img   { background: #f0f0f0; border: 2px dashed #bbb; display: flex; align-items: center; justify-content: center; color: #999; font-family: monospace; font-size: 12px; text-align: center; padding: 12px; }
+    .placeholder-video { background: #e8e8e8; border: 2px dashed #999; display: flex; align-items: center; justify-content: center; color: #666; font-family: monospace; font-size: 12px; text-align: center; padding: 12px; }
 
     section { padding: 48px 24px; }
     section + section { border-top: 1px solid #e8e8e8; }
-
     h1 { font-size: 36px; font-weight: normal; line-height: 1.2; margin-bottom: 20px; }
     h2 { font-size: 24px; font-weight: normal; margin-bottom: 16px; line-height: 1.3; }
     h3 { font-size: 17px; font-weight: bold; margin-bottom: 8px; }
     p  { font-size: 16px; line-height: 1.75; color: #333; margin-bottom: 14px; }
     p:last-child { margin-bottom: 0; }
-
     .eyebrow { font-family: monospace; font-size: 11px; text-transform: uppercase; letter-spacing: 0.15em; color: #888; margin-bottom: 14px; display: block; }
-    .tag { display: inline-block; border: 1px solid #111; padding: 5px 14px; font-size: 12px; letter-spacing: 0.12em; text-transform: uppercase; margin-bottom: 20px; }
 
-    /* hero */
+    /* Hero */
     .hero { padding: 0; }
-    .hero-img { width: 100%; }
     .hero-body { padding: 40px 24px 48px; }
     .hero-meta { display: flex; gap: 24px; flex-wrap: wrap; margin-top: 24px; }
     .hero-meta-item { border-left: 2px solid #111; padding-left: 12px; }
     .hero-meta-item .hm-label { font-family: monospace; font-size: 10px; text-transform: uppercase; letter-spacing: 0.1em; color: #888; }
     .hero-meta-item .hm-val   { font-size: 15px; margin-top: 2px; }
 
-    /* pain */
-    .pain blockquote { border-left: 3px solid #111; padding: 16px 20px; margin: 24px 0; font-size: 17px; line-height: 1.7; font-style: italic; color: #222; }
-
-    /* program */
+    /* Program */
     .program-item { border: 1px solid #ddd; padding: 20px; margin-bottom: 14px; }
     .program-item .pi-num { font-family: monospace; font-size: 11px; color: #888; margin-bottom: 6px; }
     .program-item .pi-duration { font-size: 12px; color: #888; margin-top: 6px; font-family: monospace; }
 
-    /* experts */
+    /* Experts */
     .expert { display: grid; grid-template-columns: 120px 1fr; gap: 24px; align-items: start; margin-bottom: 40px; }
     .expert:last-child { margin-bottom: 0; }
     .expert-stats { margin-top: 12px; display: flex; flex-wrap: wrap; gap: 8px; }
     .stat { background: #f5f5f5; padding: 6px 12px; font-size: 13px; font-family: monospace; }
 
-    /* proof */
+    /* Reviews */
     .reviews { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
     .review { border: 1px solid #e0e0e0; padding: 18px; font-size: 14px; line-height: 1.65; }
     .review-author { font-family: monospace; font-size: 11px; color: #888; margin-top: 10px; }
 
-    /* form */
+    /* Form */
     .form-wrap { background: #f7f7f7; padding: 32px 24px; }
     .form-group { margin-bottom: 16px; }
     label { display: block; font-size: 13px; color: #666; margin-bottom: 6px; font-family: monospace; text-transform: uppercase; letter-spacing: 0.08em; }
-    input  { width: 100%; border: 1px solid #111; padding: 14px; font-size: 16px; font-family: Georgia, serif; background: #fff; }
-    input:focus { outline: 2px solid #111; }
-
-    .btn { display: block; width: 100%; padding: 18px; text-align: center; font-size: 16px; font-family: Georgia, serif; cursor: pointer; border: none; text-decoration: none; }
-    .btn-primary { background: #111; color: #fff; margin-bottom: 12px; }
+    input[type=text], input[type=tel] { width: 100%; border: 1px solid #111; padding: 14px; font-size: 16px; font-family: Georgia, serif; background: #fff; }
+    .btn { display: block; width: 100%; padding: 18px; text-align: center; font-size: 16px; font-family: Georgia, serif; cursor: pointer; border: none; text-decoration: none; margin-bottom: 12px; }
+    .btn-primary   { background: #111; color: #fff; }
     .btn-secondary { background: #fff; color: #111; border: 2px solid #111; }
-    .btn:hover { opacity: 0.85; }
 
-    .urgency { text-align: center; font-family: monospace; font-size: 12px; color: #888; margin-top: 16px; }
+    /* ── Editable fields ── */
+    [data-field] {
+      cursor: pointer;
+      border-radius: 2px;
+      transition: background 0.15s;
+      position: relative;
+    }
+    [data-field]:hover { background: #fffbe6; outline: 1px dashed #f0c040; }
+    [data-field]:hover::after {
+      content: '✏️ нажми чтобы изменить';
+      position: absolute;
+      top: -22px; left: 0;
+      font-size: 10px;
+      font-family: monospace;
+      color: #f0a000;
+      background: #fff;
+      padding: 2px 6px;
+      border: 1px solid #f0c040;
+      white-space: nowrap;
+      z-index: 10;
+    }
+    [data-field].editing { outline: 2px solid #111; background: #fffbe6; cursor: text; }
 
-    /* guarantee */
-    .guarantee { border: 1px solid #111; padding: 20px 24px; margin-top: 24px; }
-    .guarantee h3 { font-size: 14px; text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 8px; }
+    /* Save bar */
+    #save-bar {
+      position: fixed; bottom: 0; left: 0; right: 0;
+      background: #111; color: #fff;
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 14px 24px;
+      font-family: monospace; font-size: 14px;
+      transform: translateY(100%);
+      transition: transform 0.2s;
+      z-index: 100;
+    }
+    #save-bar.visible { transform: translateY(0); }
+    #save-bar button {
+      background: #fff; color: #111; border: none;
+      padding: 8px 20px; font-size: 14px; cursor: pointer; font-family: monospace;
+    }
+    #save-bar button:hover { background: #f0f0f0; }
+    #save-status { font-size: 12px; color: #aaa; }
 
     @media (max-width: 480px) {
       h1 { font-size: 28px; }
@@ -79,27 +104,21 @@
 </head>
 <body>
 
-<!-- ═══════════════════════════════════════
-     ГЕРОЙ
-════════════════════════════════════════ -->
+<!-- ГЕРОЙ -->
 <section class="hero">
-  <div class="placeholder-img hero-img" style="height: 360px;">
-    [ ФОТО — атмосфера практики, лучше живое с людьми ]
-  </div>
+  <div class="placeholder-img" style="height:360px;">[ ФОТО — атмосфера практики ]</div>
   <div class="hero-body">
-    <div class="tag">Париж · Май 2026</div>
+    <span class="eyebrow">Париж · Май 2026</span>
     <h1>Три часа, которые изменят то, как вы живёте в своём теле</h1>
-    <p style="font-size: 18px; color: #444; line-height: 1.7;">
-      Живой интенсив по йоге, дыханию и работе с энергией. Два практика с 40 годами совокупного опыта — в одном зале, в один день.
-    </p>
+    <p style="font-size:18px;color:#444;line-height:1.7;">Живой интенсив по йоге, дыханию и работе с энергией. Два практика с 40 годами совокупного опыта — в одном зале, в один день.</p>
     <div class="hero-meta">
       <div class="hero-meta-item">
         <div class="hm-label">Дата</div>
-        <div class="hm-val">[ число ] мая 2026</div>
+        <div class="hm-val" data-field="date">[ число ] мая 2026</div>
       </div>
       <div class="hero-meta-item">
         <div class="hm-label">Место</div>
-        <div class="hm-val">Париж, Франция</div>
+        <div class="hm-val" data-field="location">Париж, Франция</div>
       </div>
       <div class="hero-meta-item">
         <div class="hm-label">Формат</div>
@@ -107,72 +126,56 @@
       </div>
       <div class="hero-meta-item">
         <div class="hm-label">Стоимость</div>
-        <div class="hm-val">[ цена ] €</div>
+        <div class="hm-val" data-field="price">[ цена ] €</div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- ═══════════════════════════════════════
-     БОЛЬ / УЗНАВАНИЕ
-════════════════════════════════════════ -->
-<section class="pain">
+<!-- БОЛЬ -->
+<section>
   <span class="eyebrow">Знакомо?</span>
   <h2>Вы занимаетесь йогой — но что-то всё равно не на месте</h2>
-
-  <blockquote>
-    "Хожу на классы уже год. Физически стало лучше. Но внутри — как будто топчусь на месте."
-  </blockquote>
-
+  <blockquote style="border-left:3px solid #111;padding:16px 20px;margin:24px 0;font-size:17px;line-height:1.7;font-style:italic;color:#222;">"Хожу на классы уже год. Физически стало лучше. Но внутри — как будто топчусь на месте."</blockquote>
   <p>Большинство практик работают с телом. Мало кто работает с тем, что за ним — с энергией, дыханием, тем слоем, который и определяет как вы себя чувствуете, принимаете решения, выстраиваете отношения.</p>
-  <p>Этот интенсив — про тот самый слой. Не теория. Не лекция ради лекции. Три часа практики, после которых вы выйдете с инструментом, который можно использовать на следующий день.</p>
+  <p>Этот интенсив — про тот самый слой. Не теория. Не лекция ради лекции. Три часа практики, после которых вы уйдёте с инструментом, который можно использовать на следующий день.</p>
 </section>
 
-<!-- ═══════════════════════════════════════
-     ЧТО ПРОИЗОЙДЁТ
-════════════════════════════════════════ -->
+<!-- ПРОГРАММА -->
 <section>
   <span class="eyebrow">Программа</span>
   <h2>Что происходит за три часа</h2>
-
   <div class="program-item">
     <div class="pi-num">ЧАСТЬ 1</div>
     <h3>Понять, что происходит в теле</h3>
-    <p>Лекция о природе праны и энергетических центрах. Пранаяма, бандхи, дришти, мудры — без эзотерики, на живом языке. Вы поймёте почему одни практики дают силу, а другие истощают.</p>
+    <p>Лекция о природе праны и энергетических центрах. Пранаяма, бандхи, дришти, мудры — без эзотерики, на живом языке.</p>
     <div class="pi-duration">~1 час · теория + демонстрация</div>
   </div>
-
   <div class="program-item">
     <div class="pi-num">ПЕРЕРЫВ</div>
     <h3>Пауза и живое общение</h3>
-    <p>15 минут — чай, вопросы, знакомство с другими участниками.</p>
+    <p>15 минут — чай, вопросы, знакомство с участниками.</p>
     <div class="pi-duration">15 минут</div>
   </div>
-
   <div class="program-item">
     <div class="pi-num">ЧАСТЬ 2</div>
     <h3>Почувствовать и активировать</h3>
-    <p>Телесная практика с дыхательными техниками. Активация кундалини-энергии — не как концепции, а как живого физического опыта. Вы уйдёте с практикой, которую сможете повторить самостоятельно.</p>
+    <p>Телесная практика с дыхательными техниками. Активация кундалини-энергии — не как концепции, а как живого физического опыта.</p>
     <div class="pi-duration">~1.5 часа · практика</div>
   </div>
 </section>
 
-<!-- ═══════════════════════════════════════
-     ЭКСПЕРТЫ
-════════════════════════════════════════ -->
+<!-- ЭКСПЕРТЫ -->
 <section>
   <span class="eyebrow">Кто ведёт</span>
   <h2>Два практика. Разные традиции. Один результат.</h2>
-  <p style="margin-bottom: 32px;">Когда встречаются два человека с таким опытом — это редкость. Обычно такой формат доступен только на многодневных ретритах за €1500+.</p>
+  <p style="margin-bottom:32px;">Когда встречаются два человека с таким опытом — это редкость. Обычно такой формат доступен только на многодневных ретритах за €1500+.</p>
 
   <div class="expert">
-    <div>
-      <div class="placeholder-img" style="width:120px; height:150px;">[ фото Влада ]</div>
-    </div>
+    <div><div class="placeholder-img" style="width:120px;height:150px;">[ фото Влада ]</div></div>
     <div>
       <h3>Владислав Чангелия</h3>
-      <p>Бывший профессиональный футболист — чемпион и призёр четырёх стран, двукратный лучший вратарь Вены. 18 лет йоги, 1000+ часов международных teacher training. Получил высшую тантрическую инициацию в традиции Shaktipat Parampara, долгие годы изучал священные тексты у Гуру в Индии.</p>
-      <p>Провёл ретриты в Индии, Испании, Венгрии, Австрии. Регулярно собирает сотни участников на практики в Вене.</p>
+      <p>Бывший профессиональный футболист — чемпион четырёх стран, двукратный лучший вратарь Вены. 18 лет йоги, 1000+ часов международных teacher training. Высшая тантрическая инициация в традиции Shaktipat Parampara, годы изучения священных текстов у Гуру в Индии.</p>
       <div class="expert-stats">
         <span class="stat">18 лет практики</span>
         <span class="stat">1000+ ч. обучения</span>
@@ -182,13 +185,10 @@
   </div>
 
   <div class="expert">
-    <div>
-      <div class="placeholder-img" style="width:120px; height:150px;">[ фото Даши ]</div>
-    </div>
+    <div><div class="placeholder-img" style="width:120px;height:150px;">[ фото Даши ]</div></div>
     <div>
       <h3>Дарья Смирнова</h3>
-      <p>Основательница школы энергопрактики "Сандхи-Хилинг". Дар чувственного восприятия — с детства. Более 20 лет изучает ведические писания, обучалась в Индии у учителей древней традиции. Авторская методика, через которую прошло более 1000 учеников.</p>
-      <p>Специализация: крийя-йога, кундалини, работа с чакрами и тонкими телами, энергетическая диагностика.</p>
+      <p data-field="dasha_bio">Основательница школы энергопрактики "Сандхи-Хилинг". Более 20 лет изучает ведические писания, обучалась в Индии у учителей древней традиции. 1000+ учеников, авторская методика. Специализация: крийя-йога, кундалини, работа с чакрами.</p>
       <div class="expert-stats">
         <span class="stat">20+ лет опыта</span>
         <span class="stat">1000+ учеников</span>
@@ -198,70 +198,56 @@
   </div>
 </section>
 
-<!-- ═══════════════════════════════════════
-     ВИДЕО
-════════════════════════════════════════ -->
+<!-- ВИДЕО -->
 <section>
   <span class="eyebrow">Атмосфера</span>
   <h2>Как это выглядит вживую</h2>
-  <div class="placeholder-video" style="height: 240px; margin-bottom: 14px;">
-    [ ВИДЕО — фрагмент с ретрита / семинара ]
-  </div>
-  <div class="placeholder-video" style="height: 180px;">
-    [ ВИДЕО — Влад или Даша говорят о формате / что ждёт участников ]
-  </div>
+  <div class="placeholder-video" style="height:240px;margin-bottom:14px;">[ ВИДЕО — фрагмент с ретрита ]</div>
+  <div class="placeholder-video" style="height:180px;">[ ВИДЕО — Влад или Даша о формате ]</div>
 </section>
 
-<!-- ═══════════════════════════════════════
-     ОТЗЫВЫ
-════════════════════════════════════════ -->
+<!-- ОТЗЫВЫ -->
 <section>
   <span class="eyebrow">Участники говорят</span>
-  <h2>После ретритов и семинаров Влада и Даши</h2>
-
+  <h2>После ретритов и семинаров</h2>
   <div class="reviews">
     <div class="review">
-      <div class="placeholder-video" style="height: 130px; margin-bottom: 12px;">[ видео-отзыв ]</div>
-      <div class="review-author">[ Имя, город ]</div>
+      <div class="placeholder-video" style="height:130px;margin-bottom:12px;">[ видео-отзыв ]</div>
+      <div class="review-author" data-field="review1_author">[ Имя, город ]</div>
     </div>
     <div class="review">
-      <div class="placeholder-video" style="height: 130px; margin-bottom: 12px;">[ видео-отзыв ]</div>
-      <div class="review-author">[ Имя, город ]</div>
+      <div class="placeholder-video" style="height:130px;margin-bottom:12px;">[ видео-отзыв ]</div>
+      <div class="review-author" data-field="review2_author">[ Имя, город ]</div>
     </div>
     <div class="review">
-      "Практика у Влада — это не набор истощающих асан. Это энергетический поток. Ты выходишь заряженным."
-      <div class="review-author">Участница, Вена</div>
+      <span data-field="review3_text">"Практика у Влада — это не набор истощающих асан. Это энергетический поток. Ты выходишь заряженным."</span>
+      <div class="review-author" data-field="review3_author">Участница, Вена</div>
     </div>
     <div class="review">
-      "Редко встречаешь учителя, который сочетает профессионализм с человеческими качествами. Вдохновляет становиться лучшей версией себя."
-      <div class="review-author">Участник, Барселона</div>
+      <span data-field="review4_text">"Редко встречаешь учителя, который сочетает профессионализм с человеческими качествами."</span>
+      <div class="review-author" data-field="review4_author">Участник, Барселона</div>
     </div>
   </div>
 </section>
 
-<!-- ═══════════════════════════════════════
-     ДЛЯ КОГО
-════════════════════════════════════════ -->
+<!-- ДЛЯ КОГО -->
 <section>
   <span class="eyebrow">Для кого</span>
   <h2>Вам сюда, если</h2>
-  <p>✓ &nbsp;Вы уже занимаетесь йогой или медитацией и хотите идти глубже</p>
-  <p>✓ &nbsp;Вы чувствуете, что физических практик недостаточно — хочется работы с энергией</p>
-  <p>✓ &nbsp;Вы в Европе и давно искали живой формат с настоящими практиками</p>
+  <p>✓ &nbsp;Вы уже занимаетесь йогой и хотите идти глубже</p>
+  <p>✓ &nbsp;Физических практик недостаточно — хочется работы с энергией</p>
+  <p>✓ &nbsp;Вы в Европе и искали живой формат с настоящими практиками</p>
   <p>✓ &nbsp;Вы новичок, который хочет начать сразу с правильной базы</p>
-  <p style="margin-top: 20px; color: #888; font-size: 14px;">Группа небольшая — каждый получает внимание обоих ведущих.</p>
+  <p style="margin-top:20px;color:#888;font-size:14px;">Группа небольшая — каждый получает внимание обоих ведущих.</p>
 </section>
 
-<!-- ═══════════════════════════════════════
-     РЕГИСТРАЦИЯ
-════════════════════════════════════════ -->
+<!-- РЕГИСТРАЦИЯ -->
 <section id="register">
   <span class="eyebrow">Место</span>
   <h2>Хочу участвовать</h2>
-  <p>Оставьте имя и номер — мы напишем, ответим на вопросы и забронируем ваше место.</p>
-
+  <p>Оставьте имя и номер — мы напишем, ответим на вопросы и забронируем место.</p>
   <div class="form-wrap">
-    <form>
+    <form onsubmit="return false;">
       <div class="form-group">
         <label>Ваше имя</label>
         <input type="text" placeholder="Как вас зовут?" />
@@ -272,23 +258,124 @@
       </div>
       <button type="submit" class="btn btn-primary">Забронировать место →</button>
     </form>
-    <div class="urgency">Мест ограничено · Небольшая группа</div>
+    <p style="text-align:center;font-family:monospace;font-size:12px;color:#888;margin-top:12px;">Мест ограничено · Небольшая группа</p>
   </div>
-
-  <p style="font-size: 14px; color: #888; margin-top: 20px; margin-bottom: 12px;">Или напишите напрямую:</p>
-  <a href="https://t.me/Vlady_108" class="btn btn-primary" style="margin-bottom: 12px;">Telegram — @Vlady_108</a>
+  <p style="font-size:14px;color:#888;margin:20px 0 12px;">Или напишите напрямую:</p>
+  <a href="https://t.me/Vlady_108" class="btn btn-primary">Telegram — @Vlady_108</a>
   <a href="https://t.me/dawa_wonder" class="btn btn-secondary">Telegram — @dawa_wonder (Даша)</a>
+</section>
 
-  <div class="guarantee">
-    <h3>Живая передача</h3>
-    <p style="font-size: 14px; color: #444; margin: 0;">Это не онлайн-курс и не запись. То, что происходит в живой практике рядом с опытным учителем, невозможно получить из видео. Именно поэтому люди едут на ретриты.</p>
+<section style="text-align:center;padding:24px;border-top:1px solid #e8e8e8;">
+  <p style="font-size:12px;color:#aaa;font-family:monospace;">vladyoga.com · @Vlady_108</p>
+</section>
+
+<!-- SAVE BAR -->
+<div id="save-bar">
+  <span>Есть несохранённые изменения</span>
+  <div style="display:flex;gap:12px;align-items:center;">
+    <span id="save-status"></span>
+    <button onclick="saveAll()">Сохранить</button>
   </div>
-</section>
+</div>
 
-<!-- FOOTER -->
-<section style="text-align: center; padding: 24px; border-top: 1px solid #e8e8e8;">
-  <p style="font-size: 12px; color: #aaa; font-family: monospace;">vladyoga.com · @Vlady_108</p>
-</section>
+<script>
+  const SLUG = 'paris';
+  let fields = {};
+  let dirty = false;
+
+  // Load saved data on page load
+  async function loadFields() {
+    try {
+      const res = await fetch('/api/landing-draft?slug=' + SLUG);
+      const data = await res.json();
+      if (data.fields) {
+        fields = data.fields;
+        Object.entries(fields).forEach(([key, val]) => {
+          const el = document.querySelector('[data-field="' + key + '"]');
+          if (el) el.textContent = val;
+        });
+      }
+    } catch(e) { console.log('Could not load draft:', e); }
+  }
+
+  // Make fields editable on click
+  document.querySelectorAll('[data-field]').forEach(el => {
+    el.addEventListener('click', function() {
+      if (this.classList.contains('editing')) return;
+      this.classList.add('editing');
+      this.contentEditable = 'true';
+      this.focus();
+
+      // Select all text
+      const range = document.createRange();
+      range.selectNodeContents(this);
+      const sel = window.getSelection();
+      sel.removeAllRanges();
+      sel.addRange(range);
+    });
+
+    el.addEventListener('blur', function() {
+      this.classList.remove('editing');
+      this.contentEditable = 'false';
+      const key = this.dataset.field;
+      const val = this.textContent.trim();
+      if (fields[key] !== val) {
+        fields[key] = val;
+        markDirty();
+      }
+    });
+
+    el.addEventListener('keydown', function(e) {
+      if (e.key === 'Enter' && !e.shiftKey) {
+        e.preventDefault();
+        this.blur();
+      }
+      if (e.key === 'Escape') {
+        this.contentEditable = 'false';
+        this.classList.remove('editing');
+      }
+    });
+  });
+
+  function markDirty() {
+    dirty = true;
+    document.getElementById('save-bar').classList.add('visible');
+    document.getElementById('save-status').textContent = '';
+  }
+
+  async function saveAll() {
+    const btn = document.querySelector('#save-bar button');
+    btn.textContent = 'Сохраняю...';
+    btn.disabled = true;
+    try {
+      const res = await fetch('/api/landing-draft', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ slug: SLUG, fields })
+      });
+      const data = await res.json();
+      if (data.success) {
+        dirty = false;
+        document.getElementById('save-status').textContent = '✓ Сохранено';
+        setTimeout(() => {
+          document.getElementById('save-bar').classList.remove('visible');
+          document.getElementById('save-status').textContent = '';
+        }, 2000);
+      }
+    } catch(e) {
+      document.getElementById('save-status').textContent = 'Ошибка, попробуй ещё раз';
+    }
+    btn.textContent = 'Сохранить';
+    btn.disabled = false;
+  }
+
+  // Warn before leaving with unsaved changes
+  window.addEventListener('beforeunload', e => {
+    if (dirty) { e.preventDefault(); e.returnValue = ''; }
+  });
+
+  loadFields();
+</script>
 
 </body>
 </html>
