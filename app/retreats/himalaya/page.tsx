@@ -369,35 +369,29 @@ export default function HimalayaPage() {
             {/* Горизонтальный скролл вертикальных видео */}
             <div className="flex gap-4 overflow-x-auto pb-4 -mx-4 px-4 sm:-mx-8 sm:px-8 lg:-mx-16 lg:px-16 snap-x snap-mandatory">
               {[
-                { src: '/videos/yakov.mp4', name: 'Яков · 2024', quote: '[ Текст отзыва ]' },
-                { src: '/videos/nadezhda.mp4', name: 'Надежда · 2025', quote: '[ Текст отзыва ]' },
-                { src: null, name: '[ Имя, город ]', quote: '[ Текст отзыва ]' },
-                { src: null, name: '[ Имя, город ]', quote: '[ Текст отзыва ]' },
+                { src: '/videos/yakov.mp4', name: 'Яков · 2024' },
+                { src: '/videos/nadezhda.mp4', name: 'Надежда · 2025' },
+                { src: '/videos/panchakarma.mp4', name: 'Панчакарма · 2026' },
+                { src: '/videos/tatiana.mp4', name: 'Татьяна · 2026' },
+                { src: '/videos/spania1.mp4', name: null },
+                { src: '/videos/spania2.mp4', name: null },
               ].map((item, i) => (
                 <div
                   key={i}
                   className="relative flex-shrink-0 w-[260px] sm:w-[300px] aspect-[9/16] bg-[#1a1a18] overflow-hidden snap-start"
                 >
-                  {item.src ? (
-                    <video
-                      src={item.src}
-                      className="absolute inset-0 w-full h-full object-cover"
-                      muted
-                      loop
-                      playsInline
-                    />
-                  ) : (
-                    <div className="absolute inset-0 flex items-center justify-center">
-                      <span className="text-white/20 text-xs font-mono text-center px-4">[ вертикальное видео {i + 1} ]</span>
+                  <video
+                    src={item.src}
+                    className="absolute inset-0 w-full h-full object-cover"
+                    muted
+                    loop
+                    playsInline
+                  />
+                  {item.name && (
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent flex flex-col justify-end p-5">
+                      <span className="text-[#c9b896] text-[10px] uppercase tracking-widest font-mono">{item.name}</span>
                     </div>
                   )}
-                  {/* Градиент + подпись */}
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/10 to-transparent flex flex-col justify-end p-5">
-                    <p className="text-white/90 text-sm font-light italic leading-relaxed mb-3">
-                      "{item.quote}"
-                    </p>
-                    <span className="text-[#c9b896] text-[10px] uppercase tracking-widest font-mono">{item.name}</span>
-                  </div>
                 </div>
               ))}
             </div>
