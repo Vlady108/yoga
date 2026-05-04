@@ -366,14 +366,39 @@ export default function HimalayaPage() {
           <div className="max-w-5xl mx-auto">
             <span className="text-[10px] uppercase tracking-widest text-[#c9b896] font-mono block mb-6">Участники говорят</span>
             <h2 className="text-2xl sm:text-4xl font-light text-[#3a3a35] mb-10">Что говорят участники</h2>
-            <div className="grid sm:grid-cols-2 gap-6">
-              {[1, 2, 3, 4].map((i) => (
-                <div key={i} className="bg-white border border-[#e8e6e0] p-6">
-                  <PhImg label={i % 2 === 0 ? '[ видео-отзыв ]' : '[ фото участника ]'} aspect={i % 2 === 0 ? 'aspect-video' : 'aspect-[4/3]'} className="w-full mb-4" />
-                  <p className="text-sm font-light text-[#3a3a35]/80 leading-relaxed italic mb-3">
-                    [ Что было до ретрита → что произошло → что изменилось после ]
-                  </p>
-                  <span className="text-[10px] uppercase tracking-widest text-[#c9b896] font-mono">[ Имя, город ]</span>
+
+            {/* Горизонтальный скролл вертикальных видео */}
+            <div className="flex gap-4 overflow-x-auto pb-4 -mx-4 px-4 sm:-mx-8 sm:px-8 lg:-mx-16 lg:px-16 snap-x snap-mandatory">
+              {[
+                { src: null, name: '[ Имя, город ]', quote: '[ Текст отзыва ]' },
+                { src: null, name: '[ Имя, город ]', quote: '[ Текст отзыва ]' },
+                { src: null, name: '[ Имя, город ]', quote: '[ Текст отзыва ]' },
+                { src: null, name: '[ Имя, город ]', quote: '[ Текст отзыва ]' },
+              ].map((item, i) => (
+                <div
+                  key={i}
+                  className="relative flex-shrink-0 w-[260px] sm:w-[300px] aspect-[9/16] bg-[#1a1a18] overflow-hidden snap-start"
+                >
+                  {item.src ? (
+                    <video
+                      src={item.src}
+                      className="absolute inset-0 w-full h-full object-cover"
+                      muted
+                      loop
+                      playsInline
+                    />
+                  ) : (
+                    <div className="absolute inset-0 flex items-center justify-center">
+                      <span className="text-white/20 text-xs font-mono text-center px-4">[ вертикальное видео {i + 1} ]</span>
+                    </div>
+                  )}
+                  {/* Градиент + подпись */}
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/10 to-transparent flex flex-col justify-end p-5">
+                    <p className="text-white/90 text-sm font-light italic leading-relaxed mb-3">
+                      "{item.quote}"
+                    </p>
+                    <span className="text-[#c9b896] text-[10px] uppercase tracking-widest font-mono">{item.name}</span>
+                  </div>
                 </div>
               ))}
             </div>
