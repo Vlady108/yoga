@@ -55,12 +55,13 @@ export default function HimalayaPage() {
 
         {/* ══ ГЕРОЙ ══ */}
         <section className="relative pt-20">
-          <div className="relative w-full h-[55vh] sm:h-[70vh]">
+          <div className="relative w-full">
             <Image
               src="/images/retrite/himalaya-hero.png"
               alt="Йога-ретрит в Гималаях"
-              fill
-              className="object-cover object-top"
+              width={1015}
+              height={571}
+              className="w-full h-auto block"
               priority
             />
           </div>
