@@ -53,28 +53,130 @@ function PhVideo({ label, className = '' }: { label: string; className?: string 
   );
 }
 
-function BookBtn({ className = '' }: { className?: string }) {
+function BookBtn({ className = '', onClick }: { className?: string; onClick?: () => void }) {
   return (
-    <a
-      href={TELEGRAM_VLAD}
-      target="_blank"
-      rel="noopener noreferrer"
-      onClick={() => { if (typeof fbq !== 'undefined') fbq('track', 'Lead'); }}
+    <button
+      onClick={onClick}
       className={`inline-flex items-center justify-center gap-3 px-8 py-4 bg-[#3a3a35] text-white hover:bg-[#c9b896] hover:text-[#3a3a35] transition-all duration-300 font-light tracking-wider text-sm ${className}`}
     >
-      <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
-        <path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm5.562 8.248-1.97 9.289c-.145.658-.537.818-1.084.508l-3-2.21-1.447 1.394c-.16.16-.295.295-.605.295l.213-3.053 5.56-5.023c.242-.213-.054-.333-.373-.12L7.433 14.41l-2.962-.924c-.643-.204-.657-.643.136-.953l11.57-4.461c.537-.194 1.006.131.385.176z"/>
-      </svg>
       Забронировать место
-    </a>
+    </button>
+  );
+}
+
+function ContactModal({ onClose }: { onClose: () => void }) {
+  const [name, setName] = useState('');
+  const [phone, setPhone] = useState('');
+  const [channels, setChannels] = useState<string[]>([]);
+  const [status, setStatus] = useState<'idle' | 'sending' | 'done' | 'error'>('idle');
+
+  const toggleChannel = (ch: string) =>
+    setChannels(prev => prev.includes(ch) ? prev.filter(c => c !== ch) : [...prev, ch]);
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    setStatus('sending');
+    try {
+      await fetch('/api/contact', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ name, phone, channels }),
+      });
+      if (typeof fbq !== 'undefined') fbq('track', 'Lead');
+      setStatus('done');
+    } catch {
+      setStatus('error');
+    }
+  };
+
+  return (
+    <div className="fixed inset-0 z-50 flex items-center justify-center p-4" onClick={onClose}>
+      <div className="absolute inset-0 bg-black/60 backdrop-blur-sm" />
+      <div
+        className="relative bg-white w-full max-w-md p-8 shadow-2xl"
+        onClick={e => e.stopPropagation()}
+        style={{ animation: 'fadeUp 0.35s ease' }}
+      >
+        <button onClick={onClose} className="absolute top-4 right-4 text-[#3a3a35]/40 hover:text-[#3a3a35] transition-colors text-2xl leading-none">×</button>
+
+        {status === 'done' ? (
+          <div className="text-center py-8">
+            <div className="text-4xl mb-4">✓</div>
+            <h3 className="text-xl font-light text-[#3a3a35] mb-2">Заявка отправлена</h3>
+            <p className="text-sm text-[#3a3a35]/60 font-light">Свяжемся с вами в ближайшее время</p>
+          </div>
+        ) : (
+          <>
+            <span className="text-[10px] uppercase tracking-widest text-[#c9b896] font-mono block mb-4">Ретрит в Гималаях · Июнь 2026</span>
+            <h3 className="text-xl font-light text-[#3a3a35] mb-6">Забронировать место</h3>
+            <form onSubmit={handleSubmit} className="space-y-4">
+              <div>
+                <label className="text-[10px] uppercase tracking-widest text-[#3a3a35]/50 font-mono block mb-1">Имя</label>
+                <input
+                  type="text"
+                  required
+                  value={name}
+                  onChange={e => setName(e.target.value)}
+                  placeholder="Ваше имя"
+                  className="w-full border border-[#e8e6e0] px-4 py-3 text-sm font-light text-[#3a3a35] focus:outline-none focus:border-[#c9b896] transition-colors"
+                />
+              </div>
+              <div>
+                <label className="text-[10px] uppercase tracking-widest text-[#3a3a35]/50 font-mono block mb-1">Телефон</label>
+                <input
+                  type="tel"
+                  required
+                  value={phone}
+                  onChange={e => setPhone(e.target.value)}
+                  placeholder="+7 / +371 / +380..."
+                  className="w-full border border-[#e8e6e0] px-4 py-3 text-sm font-light text-[#3a3a35] focus:outline-none focus:border-[#c9b896] transition-colors"
+                />
+              </div>
+              <div>
+                <label className="text-[10px] uppercase tracking-widest text-[#3a3a35]/50 font-mono block mb-3">Как связаться</label>
+                <div className="flex gap-3 flex-wrap">
+                  {['WhatsApp', 'Telegram', 'Телефон'].map(ch => (
+                    <button
+                      key={ch}
+                      type="button"
+                      onClick={() => toggleChannel(ch)}
+                      className={`px-4 py-2 text-xs border transition-all ${
+                        channels.includes(ch)
+                          ? 'bg-[#3a3a35] text-white border-[#3a3a35]'
+                          : 'border-[#e8e6e0] text-[#3a3a35]/60 hover:border-[#c9b896]'
+                      }`}
+                    >
+                      {ch}
+                    </button>
+                  ))}
+                </div>
+              </div>
+              <button
+                type="submit"
+                disabled={status === 'sending'}
+                className="w-full py-4 bg-[#3a3a35] text-white text-sm font-light tracking-wider hover:bg-[#c9b896] hover:text-[#3a3a35] transition-all disabled:opacity-50"
+              >
+                {status === 'sending' ? 'Отправляем...' : 'Отправить заявку'}
+              </button>
+              {status === 'error' && (
+                <p className="text-red-500 text-xs text-center">Ошибка отправки. Напишите напрямую в Telegram.</p>
+              )}
+            </form>
+          </>
+        )}
+      </div>
+      <style>{`@keyframes fadeUp { from { opacity:0; transform:translateY(20px); } to { opacity:1; transform:translateY(0); } }`}</style>
+    </div>
   );
 }
 
 export default function HimalayaPage() {
   const [openFaq, setOpenFaq] = useState<number | null>(null);
+  const [showModal, setShowModal] = useState(false);
 
   return (
     <>
+      {showModal && <ContactModal onClose={() => setShowModal(false)} />}
       <Header />
       <main className="bg-[#e8e6e0]">
 
@@ -93,7 +195,7 @@ export default function HimalayaPage() {
             <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent" />
             <div className="absolute inset-0 hidden sm:flex flex-col justify-end pb-16 lg:pb-20 px-10 lg:px-16">
               <div className="flex flex-row items-center gap-4">
-                <BookBtn />
+                <BookBtn onClick={() => setShowModal(true)} />
                 <span className="text-white/70 text-xs font-mono">Группа до 12 человек · Осталось 6 мест</span>
               </div>
             </div>
@@ -116,7 +218,7 @@ export default function HimalayaPage() {
 
           {/* CTA под метабаром — только мобайл */}
           <div className="sm:hidden mx-4 mt-4 flex flex-col gap-3">
-            <BookBtn className="w-full justify-center" />
+            <BookBtn onClick={() => setShowModal(true)} className="w-full justify-center" />
             <span className="text-[#3a3a35]/50 text-xs font-mono text-center">Группа до 12 человек · Осталось 6 мест</span>
           </div>
         </section>
@@ -535,7 +637,7 @@ export default function HimalayaPage() {
                 </div>
               </div>
               <div className="mt-8 pt-8 border-t border-[#e8e6e0]">
-                <BookBtn className="w-full sm:w-auto" />
+                <BookBtn onClick={() => setShowModal(true)} className="w-full sm:w-auto" />
               </div>
             </div>
           </div>
