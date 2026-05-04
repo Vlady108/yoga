@@ -57,7 +57,7 @@ export default function HimalayaPage() {
         <section className="relative">
           <div className="relative w-full h-[55vh] sm:h-[70vh]">
             <Image
-              src="/images/retrite/IMG_6149.JPG"
+              src="/images/retrite/himalaya-hero.png"
               alt="Йога-ретрит в Гималаях"
               fill
               className="object-cover"
