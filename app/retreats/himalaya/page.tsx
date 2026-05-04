@@ -55,13 +55,12 @@ export default function HimalayaPage() {
 
         {/* ══ ГЕРОЙ ══ */}
         <section className="relative pt-20">
-          <div className="relative w-full">
+          <div className="relative w-full aspect-[1015/571] lg:aspect-auto lg:h-[calc(100vh-80px)]">
             <Image
               src="/images/retrite/himalaya-hero.png"
               alt="Йога-ретрит в Гималаях"
-              width={1015}
-              height={571}
-              className="w-full h-auto block"
+              fill
+              className="object-cover object-center lg:object-[50%_90%]"
               priority
             />
           </div>
