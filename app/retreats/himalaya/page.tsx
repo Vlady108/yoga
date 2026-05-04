@@ -357,7 +357,6 @@ export default function HimalayaPage() {
                 </div>
               ))}
             </div>
-            <PhVideo label="[ ВИДЕО — 30–60 сек с прошлого ретрита ]" className="w-full aspect-video" />
           </div>
         </section>
 
