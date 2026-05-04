@@ -19,7 +19,7 @@ export default function Footer() {
           <div className="md:col-span-2">
             <div className="mb-6">
               <Image
-                src="images/logo.svg"
+                src="/images/logo.svg"
                 alt="YC Logo"
                 width={90}
                 height={90}
