@@ -5,9 +5,9 @@ import Link from 'next/link';
 import Header from '@/app/components/Header';
 import Footer from '@/app/components/Footer';
 import { useState } from 'react';
-import { Inter } from 'next/font/google';
+import { Montserrat } from 'next/font/google';
 
-const inter = Inter({ subsets: ['cyrillic', 'latin'], weight: ['900'] });
+const montserrat = Montserrat({ subsets: ['cyrillic', 'latin'], weight: ['900'] });
 
 const TELEGRAM_VLAD = 'https://t.me/Vlady_108';
 const TELEGRAM_DASHA = 'https://t.me/dawa_wonder';
@@ -70,20 +70,13 @@ export default function HimalayaPage() {
             {/* Золотой заголовок поверх фото */}
             <div className="absolute inset-0 flex items-end pb-10 sm:pb-14 lg:pb-16 px-6 sm:px-10 lg:px-16">
               <h1
-                className={`${inter.className} uppercase leading-[0.92] text-[13vw] sm:text-[10vw] lg:text-[8vw]`}
+                className={`${montserrat.className} uppercase leading-[0.92] text-[13vw] sm:text-[10vw] lg:text-[8vw]`}
                 style={{
-                  background: 'linear-gradient(180deg, #FFE54A 0%, #D4A020 45%, #8B5A00 100%)',
+                  background: 'linear-gradient(180deg, #FFE54A 0%, #C8900A 100%)',
                   WebkitBackgroundClip: 'text',
                   WebkitTextFillColor: 'transparent',
                   backgroundClip: 'text',
-                  filter: [
-                    'drop-shadow(1px 1px 0 #7A4000)',
-                    'drop-shadow(2px 2px 0 #7A4000)',
-                    'drop-shadow(3px 3px 0 #6A3200)',
-                    'drop-shadow(4px 4px 0 #5A2800)',
-                    'drop-shadow(5px 5px 0 #4A1E00)',
-                    'drop-shadow(6px 6px 14px rgba(0,0,0,0.8))',
-                  ].join(' '),
+                  filter: 'drop-shadow(0 3px 12px rgba(0,0,0,0.6))',
                 }}
               >
                 ЙОГА-РЕТРИТ<br />В ГИМАЛАЯХ
