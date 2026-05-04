@@ -370,8 +370,8 @@ export default function HimalayaPage() {
             {/* Горизонтальный скролл вертикальных видео */}
             <div className="flex gap-4 overflow-x-auto pb-4 -mx-4 px-4 sm:-mx-8 sm:px-8 lg:-mx-16 lg:px-16 snap-x snap-mandatory">
               {[
-                { src: null, name: '[ Имя, город ]', quote: '[ Текст отзыва ]' },
-                { src: null, name: '[ Имя, город ]', quote: '[ Текст отзыва ]' },
+                { src: '/videos/yakov.mp4', name: 'Яков · 2024', quote: '[ Текст отзыва ]' },
+                { src: '/videos/nadezhda.mp4', name: 'Надежда · 2025', quote: '[ Текст отзыва ]' },
                 { src: null, name: '[ Имя, город ]', quote: '[ Текст отзыва ]' },
                 { src: null, name: '[ Имя, город ]', quote: '[ Текст отзыва ]' },
               ].map((item, i) => (
