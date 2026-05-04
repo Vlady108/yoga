@@ -1,0 +1,520 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Йога-ретрит в Гималаях — 1–15 июня 2026</title>
+  <style>
+    *{box-sizing:border-box;margin:0;padding:0;}
+    html{scroll-behavior:smooth;}
+    body{font-family:Georgia,serif;background:#fff;color:#1a1a1a;max-width:720px;margin:0 auto;padding:0 0 100px;}
+
+    /* placeholders */
+    .ph-img{background:#f0ede8;border:2px dashed #c8bfb0;display:flex;align-items:center;justify-content:center;color:#a09080;font-family:monospace;font-size:12px;text-align:center;padding:16px;}
+    .ph-video{background:#e8e4de;border:2px dashed #b8afa0;display:flex;align-items:center;justify-content:center;color:#907860;font-family:monospace;font-size:12px;text-align:center;padding:16px;}
+
+    section{padding:56px 28px;}
+    section+section{border-top:1px solid #e8e4de;}
+    h1{font-size:38px;font-weight:normal;line-height:1.2;margin-bottom:20px;}
+    h2{font-size:26px;font-weight:normal;line-height:1.3;margin-bottom:18px;}
+    h3{font-size:18px;font-weight:bold;margin-bottom:10px;}
+    p{font-size:16px;line-height:1.8;color:#3a3530;margin-bottom:16px;}
+    p:last-child{margin-bottom:0;}
+    ul{margin:12px 0 16px 0;padding-left:0;list-style:none;}
+    ul li{font-size:15px;line-height:1.7;color:#3a3530;padding:4px 0 4px 22px;position:relative;}
+    ul li::before{content:"—";position:absolute;left:0;color:#8b7355;}
+
+    .eyebrow{font-family:monospace;font-size:11px;text-transform:uppercase;letter-spacing:0.18em;color:#8b7355;margin-bottom:16px;display:block;}
+    .tag{display:inline-block;border:1px solid #1a1a1a;padding:5px 16px;font-size:12px;letter-spacing:0.12em;text-transform:uppercase;margin-bottom:22px;}
+
+    /* HERO */
+    .hero{padding:0;}
+    .hero-img{width:100%;}
+    .hero-body{padding:44px 28px 52px;}
+    .hero-meta{display:grid;grid-template-columns:repeat(2,1fr);gap:16px;margin-top:28px;}
+    .meta-item{border-left:2px solid #8b7355;padding:10px 14px;}
+    .meta-label{font-family:monospace;font-size:10px;text-transform:uppercase;letter-spacing:0.12em;color:#8b7355;margin-bottom:4px;}
+    .meta-val{font-size:15px;color:#1a1a1a;}
+
+    /* QUOTE */
+    .quote-block{background:#f7f4ef;padding:32px 28px;border-left:4px solid #8b7355;margin:24px 0;font-size:18px;line-height:1.8;font-style:italic;color:#2a2520;}
+
+    /* WHAT YOU GET */
+    .benefits{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:24px;}
+    .benefit{border:1px solid #e0dbd4;padding:20px;background:#faf8f5;}
+    .benefit-icon{font-size:24px;margin-bottom:10px;}
+    .benefit h4{font-size:15px;font-weight:bold;margin-bottom:6px;}
+    .benefit p{font-size:14px;color:#5a5048;margin:0;}
+
+    /* EXPERTS */
+    .expert-grid{display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-bottom:28px;}
+    .expert-card{border:1px solid #e0dbd4;padding:24px;background:#faf8f5;}
+    .expert-card h3{font-size:16px;margin-bottom:4px;}
+    .expert-card .role{font-family:monospace;font-size:11px;color:#8b7355;text-transform:uppercase;letter-spacing:0.1em;margin-bottom:14px;display:block;}
+    .expert-card ul{margin:12px 0;}
+    .expert-card ul li{font-size:13px;padding:3px 0 3px 18px;}
+    .expert-card ul li::before{content:"·";}
+    .expert-card .quote-personal{font-style:italic;font-size:14px;color:#5a5048;border-left:2px solid #8b7355;padding-left:12px;margin-top:14px;line-height:1.7;}
+    .tandem-note{border:1px solid #8b7355;padding:20px 24px;background:#faf8f5;text-align:center;font-size:15px;line-height:1.75;color:#3a3530;}
+
+    /* GALLERY */
+    .gallery{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-top:20px;}
+    .gallery-item{aspect-ratio:1;}
+
+    /* REVIEWS */
+    .reviews{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:20px;}
+    .review-card{border:1px solid #e0dbd4;padding:20px;background:#faf8f5;}
+    .review-card .rev-photo{margin-bottom:12px;}
+    .review-card .rev-text{font-size:14px;line-height:1.7;color:#3a3530;font-style:italic;margin-bottom:10px;}
+    .review-card .rev-name{font-family:monospace;font-size:11px;color:#8b7355;text-transform:uppercase;letter-spacing:0.08em;}
+
+    /* LOGISTICS */
+    .logistics-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:20px;}
+    .log-item{border:1px solid #e0dbd4;padding:16px;}
+    .log-label{font-family:monospace;font-size:10px;text-transform:uppercase;letter-spacing:0.12em;color:#8b7355;margin-bottom:6px;}
+    .log-val{font-size:14px;color:#1a1a1a;line-height:1.6;}
+
+    /* PRICE */
+    .price-block{border:2px solid #1a1a1a;padding:32px;margin-bottom:20px;}
+    .price-main{font-size:48px;font-weight:normal;color:#1a1a1a;margin:12px 0;}
+    .price-block h3{font-size:18px;margin-bottom:8px;}
+    .included{margin:20px 0;}
+    .included h4{font-size:13px;font-family:monospace;text-transform:uppercase;letter-spacing:0.1em;color:#8b7355;margin-bottom:10px;}
+    .included ul li{font-size:14px;}
+    .not-included{color:#907060;}
+    .not-included ul li::before{content:"✕";color:#c08060;}
+
+    /* FAQ */
+    .faq-item{border-bottom:1px solid #e0dbd4;padding:20px 0;}
+    .faq-item:first-child{border-top:1px solid #e0dbd4;}
+    .faq-q{font-size:16px;font-weight:bold;margin-bottom:10px;color:#1a1a1a;cursor:pointer;}
+    .faq-a{font-size:15px;color:#5a5048;line-height:1.75;}
+
+    /* CTA FINAL */
+    .cta-final{background:#1a1a1a;color:#fff;padding:56px 28px;text-align:center;}
+    .cta-final h2{color:#fff;font-size:28px;margin-bottom:14px;}
+    .cta-final p{color:#c8c0b8;font-size:16px;margin-bottom:32px;}
+    .btn{display:block;width:100%;padding:20px;text-align:center;font-size:16px;font-family:Georgia,serif;cursor:pointer;border:none;text-decoration:none;margin-bottom:14px;letter-spacing:0.04em;}
+    .btn-gold{background:#8b7355;color:#fff;}
+    .btn-gold:hover{background:#7a6345;}
+    .btn-outline{background:transparent;color:#fff;border:1px solid #fff;}
+    .btn-outline:hover{background:rgba(255,255,255,0.1);}
+    .cta-contacts{margin-top:24px;font-family:monospace;font-size:13px;color:#907860;}
+
+    /* EDITABLE */
+    [data-field]{cursor:pointer;border-radius:2px;transition:background 0.15s;position:relative;}
+    [data-field]:hover{background:rgba(255,210,0,0.15);outline:1px dashed #c8a020;}
+    [data-field]:hover::after{content:'✏️';position:absolute;top:-18px;right:0;font-size:11px;background:#fff;padding:1px 4px;border:1px solid #c8a020;z-index:10;white-space:nowrap;}
+    [data-field].editing{outline:2px solid #8b7355;background:rgba(255,210,0,0.1);cursor:text;}
+    .cta-final [data-field]:hover{background:rgba(255,210,0,0.2);}
+
+    /* SAVE BAR */
+    #save-bar{position:fixed;bottom:0;left:0;right:0;background:#1a1a1a;color:#fff;display:flex;align-items:center;justify-content:space-between;padding:14px 24px;font-family:monospace;font-size:13px;transform:translateY(100%);transition:transform 0.2s;z-index:100;}
+    #save-bar.visible{transform:translateY(0);}
+    #save-bar button{background:#8b7355;color:#fff;border:none;padding:8px 20px;font-size:13px;cursor:pointer;font-family:monospace;}
+    #save-bar button:hover{background:#7a6345;}
+    #save-status{font-size:12px;color:#8b7355;}
+
+    @media(max-width:520px){
+      h1{font-size:28px;}
+      h2{font-size:22px;}
+      .hero-meta,.benefits,.expert-grid,.logistics-grid,.reviews,.gallery{grid-template-columns:1fr;}
+      .price-main{font-size:36px;}
+    }
+  </style>
+</head>
+<body>
+
+<!-- ═══ БЛОК 1: ГЕРОЙ ═══ -->
+<section class="hero">
+  <div class="ph-img hero-img" style="height:420px;">[ ГЛАВНОЕ ФОТО — Гималаи, вид на горы, рассвет ]</div>
+  <div class="hero-body">
+    <div class="tag" data-field="hero_tag">Гималаи · 1–15 июня 2026</div>
+    <h1 data-field="hero_title">Йога-ретрит в Гималаях. 15 дней трансформации на высоте 2000 м</h1>
+    <p style="font-size:18px;color:#4a4540;line-height:1.8;" data-field="hero_desc">Два учителя. Тринадцать участников. Места силы, где тысячи лет медитировали великие йоги. Погружение, которое невозможно получить нигде больше.</p>
+    <div class="hero-meta">
+      <div class="meta-item">
+        <div class="meta-label">Даты</div>
+        <div class="meta-val" data-field="meta_dates">1–15 июня 2026</div>
+      </div>
+      <div class="meta-item">
+        <div class="meta-label">Длительность</div>
+        <div class="meta-val" data-field="meta_duration">15 дней</div>
+      </div>
+      <div class="meta-item">
+        <div class="meta-label">Место встречи</div>
+        <div class="meta-val" data-field="meta_meetpoint">1 июня, Дели</div>
+      </div>
+      <div class="meta-item">
+        <div class="meta-label">Стоимость</div>
+        <div class="meta-val" data-field="meta_price">2800€</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ БЛОК 2: ГИМАЛАИ — МЕСТО СИЛЫ ═══ -->
+<section>
+  <span class="eyebrow" data-field="b2_eyebrow">Место силы</span>
+  <h2 data-field="b2_title">Почему именно Гималаи</h2>
+  <div class="quote-block" data-field="b2_quote">Просто от пребывания посреди Гималайских вершин вы приобретаете тот опыт, который вы нигде больше не сможете получить. В Гималаях тысячи лет медитировали великие мудрецы и йоги, которые пришли к глубокой духовной реализации — и попадая в эти места силы, вы приобретаете внутреннюю силу, глубокое спокойствие и уверенность в своём пути.</div>
+  <p data-field="b2_p1">Практические аспекты йоги и аюрведы для познания себя, оздоровление тела и ума, расширение сознания. Как результат — спокойный и удовлетворённый ум, который делает жизнь человека счастливой.</p>
+  <div class="ph-img" style="height:280px;margin-top:24px;">[ ФОТО — горный пейзаж, рассвет, медитация на вершине ]</div>
+</section>
+
+<!-- ═══ БЛОК 3: ЧТО ВЫ ПОЛУЧИТЕ ═══ -->
+<section>
+  <span class="eyebrow" data-field="b3_eyebrow">Что вы получите</span>
+  <h2 data-field="b3_title">Что меняется после 15 дней в Гималаях</h2>
+  <div class="benefits">
+    <div class="benefit">
+      <div class="benefit-icon">🏔</div>
+      <h4 data-field="ben1_title">Внутренняя сила</h4>
+      <p data-field="ben1_text">Устойчивость и уверенность, которые остаются с вами после возвращения домой.</p>
+    </div>
+    <div class="benefit">
+      <div class="benefit-icon">🌬</div>
+      <h4 data-field="ben2_title">Глубокое дыхание</h4>
+      <p data-field="ben2_text">Пранаяма и работа с кундалини — инструменты, которые вы возьмёте в свою ежедневную практику.</p>
+    </div>
+    <div class="benefit">
+      <div class="benefit-icon">🧘</div>
+      <h4 data-field="ben3_title">Спокойствие ума</h4>
+      <p data-field="ben3_text">Медитативные практики в местах силы дают тот уровень тишины, который недостижим в городе.</p>
+    </div>
+    <div class="benefit">
+      <div class="benefit-icon">✨</div>
+      <h4 data-field="ben4_title">Духовный опыт</h4>
+      <p data-field="ben4_text">Активация кундалини в Гималаях — опыт, который практикующие описывают как точку невозврата.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ БЛОК 4: ПРОГРАММА ═══ -->
+<section>
+  <span class="eyebrow" data-field="prog_eyebrow">Программа</span>
+  <h2 data-field="prog_title">Как устроены 15 дней</h2>
+  <p data-field="prog_intro">Каждый день структурирован вокруг практики, но у вас будет время на личное пространство, трекинг и погружение в атмосферу Гималаев.</p>
+  <div class="ph-img" style="height:220px;margin:20px 0;">[ ФОТО — групповая практика, утренняя медитация ]</div>
+  <ul>
+    <li data-field="prog_li1">Утренняя практика: пранаяма, медитация, асаны</li>
+    <li data-field="prog_li2">Сатсанги — беседы о философии йоги, ведических текстах</li>
+    <li data-field="prog_li3">Трекинг к священным местам — ашрамы, храмы, горные тропы</li>
+    <li data-field="prog_li4">Работа с кундалини и энергетическими практиками</li>
+    <li data-field="prog_li5">Рафтинг по реке Алакананда</li>
+    <li data-field="prog_li6">Свободное время для интеграции и личной практики</li>
+    <li data-field="prog_li7">[ Дарья и Влад добавляют детали программы ]</li>
+  </ul>
+</section>
+
+<!-- ═══ БЛОК 5: ВЕДУЩИЕ ═══ -->
+<section>
+  <span class="eyebrow" data-field="exp_eyebrow">Ведущие</span>
+  <h2 data-field="exp_title">Кто проведёт вас через этот опыт</h2>
+
+  <div class="expert-grid">
+    <!-- ВЛАД -->
+    <div class="expert-card">
+      <div class="ph-img" style="height:200px;margin-bottom:16px;">[ фото Влада — живое, не студийное ]</div>
+      <h3 data-field="vlad_name">Владислав Чангелия</h3>
+      <span class="role" data-field="vlad_role">Bajrang Das · Йога-учитель</span>
+      <ul>
+        <li data-field="vlad_li1">32 года в футболе, 22 — профессиональная карьера</li>
+        <li data-field="vlad_li2">КМС по футболу, чемпион четырёх стран</li>
+        <li data-field="vlad_li3">19 лет практики йоги, 1000+ часов TTC</li>
+        <li data-field="vlad_li4">Два посвящения в традиции бхакти-йоги</li>
+        <li data-field="vlad_li5">Высшее тантрическое посвящение, Шактипат Парампара</li>
+        <li data-field="vlad_li6">Годы изучения писаний у Гуру в Индии</li>
+        <li data-field="vlad_li7">Автор книги «Футболист, который пытался стать монахом»</li>
+      </ul>
+      <div class="quote-personal" data-field="vlad_quote">22 года в профессиональном футболе и 19 лет практики йоги научили меня выполнять свою работу в состоянии йоги — совмещать материальные обязанности и вместе с тем идти по духовному пути. Соединение древних йогических практик работы с дыханием и вниманием с активацией и пробуждением Кундалини Ма в Гималаях даст возможность получить невероятный духовный опыт.</div>
+    </div>
+
+    <!-- ДАРЬЯ -->
+    <div class="expert-card">
+      <div class="ph-img" style="height:200px;margin-bottom:16px;">[ фото Дарьи — живое, из Индии или ретрита ]</div>
+      <h3 data-field="dasha_name">Дарья Смирнова</h3>
+      <span class="role" data-field="dasha_role">Основательница Сандхи-Хилинг</span>
+      <p data-field="dasha_desc">[ Дарья — кто она в 2-3 предложениях. Суть, не регалии. ]</p>
+      <ul>
+        <li data-field="dasha_li1">[ Сколько ретритов провела ]</li>
+        <li data-field="dasha_li2">[ Сколько раз была в Индии ]</li>
+        <li data-field="dasha_li3">[ С кем работала, ключевой опыт ]</li>
+      </ul>
+      <div class="quote-personal" data-field="dasha_quote">[ Одна фраза от первого лица — почему веду этот ретрит. Живая и настоящая, не про сертификаты. ]</div>
+    </div>
+  </div>
+
+  <!-- ТАНДЕМ -->
+  <div class="tandem-note">
+    <p data-field="tandem_text">[ Одно общее предложение о том, почему их тандем уникален. Что даёт сочетание их подходов — чего не даст ни один из них по отдельности. ]</p>
+  </div>
+</section>
+
+<!-- ═══ БЛОК 6: КАК ЭТО БЫЛО ═══ -->
+<section>
+  <span class="eyebrow" data-field="gallery_eyebrow">Наши ретриты в Индии</span>
+  <h2 data-field="gallery_title">Как это было</h2>
+  <p data-field="gallery_desc">Реальные моменты с прошлых ретритов — практика, природа, люди.</p>
+  <div class="gallery">
+    <div class="ph-img gallery-item">[ фото 1 ]</div>
+    <div class="ph-img gallery-item">[ фото 2 ]</div>
+    <div class="ph-img gallery-item">[ фото 3 ]</div>
+    <div class="ph-img gallery-item">[ фото 4 ]</div>
+    <div class="ph-img gallery-item">[ фото 5 ]</div>
+    <div class="ph-img gallery-item">[ фото 6 ]</div>
+  </div>
+  <div class="ph-video" style="height:260px;margin-top:16px;">[ ВИДЕО — 30–60 сек с прошлого ретрита ]</div>
+</section>
+
+<!-- ═══ БЛОК 7: ОТЗЫВЫ ═══ -->
+<section>
+  <span class="eyebrow" data-field="rev_eyebrow">Участники говорят</span>
+  <h2 data-field="rev_title">Что говорят участники</h2>
+  <div class="reviews">
+    <div class="review-card">
+      <div class="ph-img rev-photo" style="height:120px;">[ фото участника ]</div>
+      <div class="rev-text" data-field="rev1_text">[ Что было до ретрита → что произошло → что изменилось после ]</div>
+      <div class="rev-name" data-field="rev1_name">[ Имя, город ]</div>
+    </div>
+    <div class="review-card">
+      <div class="ph-video rev-photo" style="height:120px;">[ видео-отзыв ]</div>
+      <div class="rev-text" data-field="rev2_text">[ Отзыв участника ]</div>
+      <div class="rev-name" data-field="rev2_name">[ Имя, город ]</div>
+    </div>
+    <div class="review-card">
+      <div class="ph-img rev-photo" style="height:120px;">[ фото участника ]</div>
+      <div class="rev-text" data-field="rev3_text">[ Отзыв участника ]</div>
+      <div class="rev-name" data-field="rev3_name">[ Имя, город ]</div>
+    </div>
+    <div class="review-card">
+      <div class="ph-video rev-photo" style="height:120px;">[ видео-отзыв ]</div>
+      <div class="rev-text" data-field="rev4_text">[ Отзыв участника ]</div>
+      <div class="rev-name" data-field="rev4_name">[ Имя, город ]</div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ БЛОК 8: ЛОГИСТИКА ═══ -->
+<section>
+  <span class="eyebrow" data-field="log_eyebrow">Детали и логистика</span>
+  <h2 data-field="log_title">Как всё устроено</h2>
+  <div class="logistics-grid">
+    <div class="log-item">
+      <div class="log-label">Даты</div>
+      <div class="log-val" data-field="log_dates">1–15 июня 2026</div>
+    </div>
+    <div class="log-item">
+      <div class="log-label">Длительность</div>
+      <div class="log-val" data-field="log_duration">15 дней</div>
+    </div>
+    <div class="log-item">
+      <div class="log-label">Проживание</div>
+      <div class="log-val" data-field="log_housing">Комфортная уединённая вилла на высоте 2000 м. Во время трекинга — отели и палатки.</div>
+    </div>
+    <div class="log-item">
+      <div class="log-label">Питание</div>
+      <div class="log-val" data-field="log_food">Вегетарианское, 2 раза в день, включено в стоимость</div>
+    </div>
+    <div class="log-item">
+      <div class="log-label">Перелёт</div>
+      <div class="log-val" data-field="log_flight">Не входит в стоимость. Встречаемся 1 июня в Дели.</div>
+    </div>
+    <div class="log-item">
+      <div class="log-label">Трансфер</div>
+      <div class="log-val" data-field="log_transfer">Из/в аэропорт включён. Все переезды по Гималаям включены.</div>
+    </div>
+    <div class="log-item">
+      <div class="log-label">Размер группы</div>
+      <div class="log-val" data-field="log_groupsize">13 человек</div>
+    </div>
+    <div class="log-item">
+      <div class="log-label">Уровень подготовки</div>
+      <div class="log-val" data-field="log_level">Опыт в йоге не важен. Практики осилит каждый.</div>
+    </div>
+    <div class="log-item">
+      <div class="log-label">Язык</div>
+      <div class="log-val" data-field="log_language">Русский</div>
+    </div>
+    <div class="log-item">
+      <div class="log-label">Виза</div>
+      <div class="log-val" data-field="log_visa">Помогаем с оформлением</div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ БЛОК 9: ЦЕНА ═══ -->
+<section>
+  <span class="eyebrow" data-field="price_eyebrow">Стоимость участия</span>
+  <h2 data-field="price_title">Инвестиция в опыт, который остаётся с вами навсегда</h2>
+  <div class="price-block">
+    <h3 data-field="price_package_name">Полный пакет</h3>
+    <div class="price-main" data-field="price_amount">2 800€</div>
+    <div class="included">
+      <h4>Что включено</h4>
+      <ul>
+        <li data-field="inc1">Проживание в течение всего ретрита</li>
+        <li data-field="inc2">Вегетарианское питание 2 раза в день</li>
+        <li data-field="inc3">Трансфер из/в аэропорт Дели</li>
+        <li data-field="inc4">Все переезды по Гималаям</li>
+        <li data-field="inc5">Все практики и сатсанги</li>
+        <li data-field="inc6">Помощь в оформлении визы</li>
+        <li data-field="inc7">Сопровождение в течение всего тура</li>
+        <li data-field="inc8">Рафтинг по реке Алакананда</li>
+      </ul>
+    </div>
+    <div class="included not-included">
+      <h4>Что не входит</h4>
+      <ul>
+        <li data-field="notinc1">Перелёт до Дели и обратно</li>
+        <li data-field="notinc2">Виза (помогаем оформить)</li>
+        <li data-field="notinc3">[ Что-то ещё при необходимости ]</li>
+      </ul>
+    </div>
+  </div>
+  <p style="font-size:14px;color:#8b7355;font-family:monospace;" data-field="price_note">[ Условия раннего бронирования, если есть ]</p>
+</section>
+
+<!-- ═══ БЛОК 10: FAQ ═══ -->
+<section>
+  <span class="eyebrow" data-field="faq_eyebrow">Частые вопросы</span>
+  <h2 data-field="faq_title">Частые вопросы</h2>
+  <div class="faq-item">
+    <div class="faq-q" data-field="faq1_q">Нужен ли опыт в йоге?</div>
+    <div class="faq-a" data-field="faq1_a">Подходит для всех уровней практикующих — от начинающих до продвинутого уровня. Мы адаптируем практики под каждого участника.</div>
+  </div>
+  <div class="faq-item">
+    <div class="faq-q" data-field="faq2_q">Безопасно ли в Гималаях?</div>
+    <div class="faq-a" data-field="faq2_a">Полностью. После этой поездки вы влюбитесь в Гималаи.</div>
+  </div>
+  <div class="faq-item">
+    <div class="faq-q" data-field="faq3_q">Какая физическая подготовка нужна?</div>
+    <div class="faq-a" data-field="faq3_a">Обсуждается индивидуально. Напишите нам — расскажем подробнее с учётом вашего уровня.</div>
+  </div>
+  <div class="faq-item">
+    <div class="faq-q" data-field="faq4_q">Можно ли приехать с партнёром?</div>
+    <div class="faq-a" data-field="faq4_a">Нужно — это один из лучших совместных опытов.</div>
+  </div>
+  <div class="faq-item">
+    <div class="faq-q" data-field="faq5_q">Что брать с собой?</div>
+    <div class="faq-a" data-field="faq5_a">Подробный список высылаем в Telegram-группу после регистрации.</div>
+  </div>
+  <div class="faq-item">
+    <div class="faq-q" data-field="faq6_q">Как оформить визу?</div>
+    <div class="faq-a" data-field="faq6_a">Мы помогаем с оформлением — расскажем всё что нужно после бронирования места.</div>
+  </div>
+  <div class="faq-item">
+    <div class="faq-q" data-field="faq7_q">Что если я передумаю — условия отмены?</div>
+    <div class="faq-a" data-field="faq7_a">Аванс не возвращается. Остаток — по договорённости в зависимости от срока отмены.</div>
+  </div>
+  <div class="faq-item">
+    <div class="faq-q" data-field="faq8_q">Есть ли свободное время или расписание плотное?</div>
+    <div class="faq-a" data-field="faq8_a">Свободное время есть каждый день. Мы не гоним вперёд — этот ретрит про погружение, а не про программу.</div>
+  </div>
+</section>
+
+<!-- ═══ БЛОК 11: ФИНАЛЬНЫЙ CTA ═══ -->
+<section class="cta-final">
+  <h2 data-field="cta_title">Такая возможность предоставляется редко</h2>
+  <p data-field="cta_desc">Если чувствуешь отклик — пиши в личные сообщения, чтобы обсудить детали. Осталось всего несколько мест.</p>
+  <a href="https://t.me/Vlady_108" class="btn btn-gold" data-field="cta_btn1">Забронировать место → Telegram</a>
+  <a href="https://t.me/dawa_wonder" class="btn btn-outline" data-field="cta_btn2">Написать Дарье → @dawa_wonder</a>
+  <div class="cta-contacts" data-field="cta_contacts">Остались вопросы? Напишите — ответим лично.</div>
+</section>
+
+<!-- SAVE BAR -->
+<div id="save-bar">
+  <span>Есть несохранённые изменения</span>
+  <div style="display:flex;gap:12px;align-items:center;">
+    <span id="save-status"></span>
+    <button onclick="saveAll()">Сохранить</button>
+  </div>
+</div>
+
+<script>
+  const SLUG = 'himalaya';
+  let fields = {};
+  let dirty = false;
+
+  async function loadFields() {
+    try {
+      const res = await fetch('/api/landing-draft?slug=' + SLUG);
+      const data = await res.json();
+      if (data.fields) {
+        fields = data.fields;
+        Object.entries(fields).forEach(([key, val]) => {
+          const el = document.querySelector('[data-field="' + key + '"]');
+          if (el) el.textContent = val;
+        });
+      }
+    } catch(e) { console.log('load error:', e); }
+  }
+
+  document.querySelectorAll('[data-field]').forEach(el => {
+    el.addEventListener('click', function(e) {
+      e.preventDefault();
+      if (this.classList.contains('editing')) return;
+      this.classList.add('editing');
+      this.contentEditable = 'true';
+      this.focus();
+      const range = document.createRange();
+      range.selectNodeContents(this);
+      const sel = window.getSelection();
+      sel.removeAllRanges();
+      sel.addRange(range);
+    });
+    el.addEventListener('blur', function() {
+      this.classList.remove('editing');
+      this.contentEditable = 'false';
+      const val = this.textContent.trim();
+      if (fields[this.dataset.field] !== val) {
+        fields[this.dataset.field] = val;
+        markDirty();
+      }
+    });
+    el.addEventListener('keydown', function(e) {
+      if (e.key === 'Enter' && !e.shiftKey) { e.preventDefault(); this.blur(); }
+      if (e.key === 'Escape') { this.contentEditable = 'false'; this.classList.remove('editing'); }
+    });
+  });
+
+  function markDirty() {
+    dirty = true;
+    document.getElementById('save-bar').classList.add('visible');
+    document.getElementById('save-status').textContent = '';
+  }
+
+  async function saveAll() {
+    const btn = document.querySelector('#save-bar button');
+    btn.textContent = 'Сохраняю...';
+    btn.disabled = true;
+    try {
+      const res = await fetch('/api/landing-draft', {
+        method: 'POST',
+        headers: {'Content-Type': 'application/json'},
+        body: JSON.stringify({slug: SLUG, fields})
+      });
+      const data = await res.json();
+      if (data.success) {
+        dirty = false;
+        document.getElementById('save-status').textContent = '✓ Сохранено';
+        setTimeout(() => {
+          document.getElementById('save-bar').classList.remove('visible');
+          document.getElementById('save-status').textContent = '';
+        }, 2000);
+      }
+    } catch(e) {
+      document.getElementById('save-status').textContent = 'Ошибка';
+    }
+    btn.textContent = 'Сохранить';
+    btn.disabled = false;
+  }
+
+  window.addEventListener('beforeunload', e => {
+    if (dirty) { e.preventDefault(); e.returnValue = ''; }
+  });
+
+  loadFields();
+</script>
+</body>
+</html>
