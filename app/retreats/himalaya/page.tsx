@@ -252,12 +252,12 @@ export default function HimalayaPage() {
             <div className="grid sm:grid-cols-2 gap-6 mb-8">
               {/* ВЛАД */}
               <div className="bg-white border border-[#e8e6e0] overflow-hidden">
-                <div className="relative aspect-[4/3]">
+                <div className="relative aspect-[3/4]">
                   <Image
                     src="/images/about/IMG_6150.JPG"
                     alt="Владислав Чангелия"
                     fill
-                    className="object-cover"
+                    className="object-cover object-top"
                   />
                 </div>
                 <div className="p-6 sm:p-8">
@@ -289,7 +289,7 @@ export default function HimalayaPage() {
 
               {/* ДАРЬЯ */}
               <div className="bg-white border border-[#e8e6e0] overflow-hidden">
-                <div className="relative aspect-[4/3]">
+                <div className="relative aspect-[3/4]">
                   <Image
                     src="/images/retrite/daria.jpg"
                     alt="Дарья Смирнова"
