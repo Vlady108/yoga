@@ -51,10 +51,10 @@ export default function HimalayaPage() {
   return (
     <>
       <Header />
-      <main className="bg-[#e8e6e0] pt-20">
+      <main className="bg-[#e8e6e0]">
 
         {/* ══ ГЕРОЙ ══ */}
-        <section className="relative">
+        <section className="relative pt-20">
           <div className="relative w-full h-[55vh] sm:h-[70vh]">
             <Image
               src="/images/retrite/himalaya-hero.png"
@@ -63,15 +63,6 @@ export default function HimalayaPage() {
               className="object-cover"
               priority
             />
-            <div className="absolute inset-0 bg-gradient-to-b from-[#3a3a35]/50 via-[#3a3a35]/30 to-[#e8e6e0]" />
-            <div className="absolute bottom-0 left-0 right-0 p-6 sm:p-12">
-              <span className="inline-block px-4 py-1.5 bg-[#c9b896] text-[#3a3a35] text-xs font-medium tracking-widest uppercase mb-4">
-                Гималаи · 1–15 июня 2026
-              </span>
-              <h1 className="text-3xl sm:text-5xl lg:text-6xl font-light text-white leading-tight max-w-3xl">
-                Йога-ретрит в Гималаях
-              </h1>
-            </div>
           </div>
 
           {/* Meta bar */}
