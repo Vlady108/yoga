@@ -234,8 +234,13 @@ export default function HimalayaPage() {
                 </div>
               ))}
             </div>
-            <div className="mt-4">
-              <PhImg label="[ ФОТО — групповая практика, утренняя медитация в горах ]" className="w-full" />
+            <div className="mt-4 relative w-full aspect-video overflow-hidden">
+              <Image
+                src="/images/retrite/pan.jpg"
+                alt="Групповая практика в Гималаях"
+                fill
+                className="object-cover"
+              />
             </div>
           </div>
         </section>
