@@ -98,13 +98,51 @@ export default function HimalayaPage() {
           </p>
           <div className="grid grid-cols-2 sm:grid-cols-4 gap-4">
             {[
-              { icon: '🏔', title: 'Внутренняя сила', text: 'Устойчивость, которая остаётся после возвращения' },
-              { icon: '🌬', title: 'Работа с дыханием', text: 'Пранаяма и кундалини — на всю жизнь' },
-              { icon: '🧘', title: 'Спокойствие ума', text: 'Тишина, недостижимая в городе' },
-              { icon: '✨', title: 'Духовный опыт', text: 'Активация в местах силы — точка невозврата' },
+              {
+                icon: (
+                  <svg width="32" height="32" viewBox="0 0 32 32" fill="none" stroke="#c9b896" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+                    <path d="M16 4 L28 26 H4 Z" />
+                    <path d="M16 4 L22 16 H10 Z" fill="#c9b896" fillOpacity="0.15" />
+                  </svg>
+                ),
+                title: 'Внутренняя сила',
+                text: 'Устойчивость, которая остаётся после возвращения',
+              },
+              {
+                icon: (
+                  <svg width="32" height="32" viewBox="0 0 32 32" fill="none" stroke="#c9b896" strokeWidth="1.5" strokeLinecap="round">
+                    <path d="M4 16 Q8 10 12 16 Q16 22 20 16 Q24 10 28 16" />
+                    <path d="M4 22 Q8 16 12 22 Q16 28 20 22 Q24 16 28 22" opacity="0.4" />
+                  </svg>
+                ),
+                title: 'Работа с дыханием',
+                text: 'Пранаяма и кундалини — на всю жизнь',
+              },
+              {
+                icon: (
+                  <svg width="32" height="32" viewBox="0 0 32 32" fill="none" stroke="#c9b896" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+                    <circle cx="16" cy="16" r="4" />
+                    <path d="M16 4 C10 4 4 9 4 16" />
+                    <path d="M16 28 C22 28 28 23 28 16" />
+                    <path d="M4 16 C4 23 9 28 16 28" opacity="0.4" />
+                    <path d="M28 16 C28 9 23 4 16 4" opacity="0.4" />
+                  </svg>
+                ),
+                title: 'Спокойствие ума',
+                text: 'Тишина, недостижимая в городе',
+              },
+              {
+                icon: (
+                  <svg width="32" height="32" viewBox="0 0 32 32" fill="none" stroke="#c9b896" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+                    <path d="M16 4 L18 13 L27 13 L20 19 L23 28 L16 22 L9 28 L12 19 L5 13 L14 13 Z" />
+                  </svg>
+                ),
+                title: 'Духовный опыт',
+                text: 'Активация в местах силы — точка невозврата',
+              },
             ].map((b) => (
               <div key={b.title} className="bg-white p-5 sm:p-6 border border-[#e8e6e0]">
-                <div className="text-2xl mb-3">{b.icon}</div>
+                <div className="mb-4">{b.icon}</div>
                 <div className="text-sm font-medium text-[#3a3a35] mb-2">{b.title}</div>
                 <div className="text-xs text-[#3a3a35]/60 leading-relaxed">{b.text}</div>
               </div>
