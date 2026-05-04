@@ -4,7 +4,32 @@ import Image from 'next/image';
 import Link from 'next/link';
 import Header from '@/app/components/Header';
 import Footer from '@/app/components/Footer';
-import { useState } from 'react';
+import { useState, useEffect, useRef, ReactNode } from 'react';
+
+function FadeUp({ children, delay = 0, className = '' }: { children: ReactNode; delay?: number; className?: string }) {
+  const ref = useRef<HTMLDivElement>(null);
+  const [visible, setVisible] = useState(false);
+  useEffect(() => {
+    const el = ref.current;
+    if (!el) return;
+    const obs = new IntersectionObserver(([e]) => { if (e.isIntersecting) { setVisible(true); obs.disconnect(); } }, { threshold: 0.12 });
+    obs.observe(el);
+    return () => obs.disconnect();
+  }, []);
+  return (
+    <div
+      ref={ref}
+      className={className}
+      style={{
+        opacity: visible ? 1 : 0,
+        transform: visible ? 'translateY(0)' : 'translateY(32px)',
+        transition: `opacity 0.6s ease ${delay}ms, transform 0.6s ease ${delay}ms`,
+      }}
+    >
+      {children}
+    </div>
+  );
+}
 
 const TELEGRAM_VLAD = 'https://t.me/Vlady_108';
 const TELEGRAM_DASHA = 'https://t.me/dawa_wonder';
@@ -98,18 +123,24 @@ export default function HimalayaPage() {
 
         {/* ══ МЕСТО СИЛЫ ══ */}
         <section className="px-4 sm:px-8 lg:px-16 py-16 sm:py-24 max-w-5xl mx-auto">
-          <span className="text-[10px] uppercase tracking-widest text-[#c9b896] font-mono block mb-6">Место силы</span>
-          <h2 className="text-2xl sm:text-4xl font-light text-[#3a3a35] leading-tight mb-8 max-w-2xl">
-            Почему именно Гималаи
-          </h2>
+          <FadeUp>
+            <span className="text-[10px] uppercase tracking-widest text-[#c9b896] font-mono block mb-6">Место силы</span>
+            <h2 className="text-2xl sm:text-4xl font-light text-[#3a3a35] leading-tight mb-8 max-w-2xl">
+              Почему именно Гималаи
+            </h2>
+          </FadeUp>
+          <FadeUp delay={150}>
           <div className="border-l-4 border-[#c9b896] pl-6 sm:pl-8 mb-10">
             <p className="text-lg sm:text-xl font-light text-[#3a3a35] leading-relaxed italic">
               Просто от пребывания посреди Гималайских вершин вы приобретаете тот опыт, который вы нигде больше не сможете получить. В Гималаях тысячи лет медитировали великие мудрецы и йоги, которые пришли к глубокой духовной реализации — и попадая в эти места силы, вы приобретаете внутреннюю силу, глубокое спокойствие и уверенность в своём пути.
             </p>
           </div>
+          </FadeUp>
+          <FadeUp delay={250}>
           <p className="text-base sm:text-lg font-light text-[#3a3a35]/80 leading-relaxed mb-12">
             Практические аспекты йоги и аюрведы для познания себя, оздоровление тела и ума, расширение сознания. Как результат — спокойный и удовлетворённый ум, который делает жизнь человека счастливой.
           </p>
+          </FadeUp>
           <div className="grid grid-cols-2 sm:grid-cols-4 gap-4">
             {[
               {
@@ -154,12 +185,14 @@ export default function HimalayaPage() {
                 title: 'Духовный опыт',
                 text: 'Активация в местах силы — точка невозврата',
               },
-            ].map((b) => (
-              <div key={b.title} className="bg-white p-5 sm:p-6 border border-[#e8e6e0]">
-                <div className="mb-4">{b.icon}</div>
-                <div className="text-sm font-medium text-[#3a3a35] mb-2">{b.title}</div>
-                <div className="text-xs text-[#3a3a35]/60 leading-relaxed">{b.text}</div>
-              </div>
+            ].map((b, i) => (
+              <FadeUp key={b.title} delay={i * 100}>
+                <div className="bg-white p-5 sm:p-6 border border-[#e8e6e0] h-full">
+                  <div className="mb-4">{b.icon}</div>
+                  <div className="text-sm font-medium text-[#3a3a35] mb-2">{b.title}</div>
+                  <div className="text-xs text-[#3a3a35]/60 leading-relaxed">{b.text}</div>
+                </div>
+              </FadeUp>
             ))}
           </div>
         </section>
@@ -167,8 +200,10 @@ export default function HimalayaPage() {
         {/* ══ ДЛЯ КОГО ══ */}
         <section className="bg-[#3a3a35] py-16 sm:py-24 px-4 sm:px-8 lg:px-16">
           <div className="max-w-5xl mx-auto">
-            <span className="text-[10px] uppercase tracking-widest text-[#c9b896] font-mono block mb-6">Для кого</span>
-            <h2 className="text-2xl sm:text-4xl font-light text-white mb-10">Этот ретрит для вас, если вы хотите</h2>
+            <FadeUp>
+              <span className="text-[10px] uppercase tracking-widest text-[#c9b896] font-mono block mb-6">Для кого</span>
+              <h2 className="text-2xl sm:text-4xl font-light text-white mb-10">Этот ретрит для вас, если вы хотите</h2>
+            </FadeUp>
             <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
               {[
                 { num: '01', text: 'Оздоровить и укрепить тело и все системы организма' },
@@ -177,11 +212,13 @@ export default function HimalayaPage() {
                 { num: '04', text: 'Научиться управлять своими состояниями и практикам саморегуляции' },
                 { num: '05', text: 'Найти решение в сложной жизненной ситуации' },
                 { num: '06', text: 'Раскрыть своё предназначение и понять, в каком направлении двигаться' },
-              ].map((item) => (
-                <div key={item.num} className="border border-white/10 p-6 hover:border-[#c9b896]/50 transition-colors">
-                  <div className="text-2xl font-light text-[#c9b896]/40 font-mono mb-4">{item.num}</div>
-                  <p className="text-sm font-light text-white/80 leading-relaxed">{item.text}</p>
-                </div>
+              ].map((item, i) => (
+                <FadeUp key={item.num} delay={i * 80}>
+                  <div className="border border-white/10 p-6 hover:border-[#c9b896]/50 transition-colors h-full">
+                    <div className="text-2xl font-light text-[#c9b896]/40 font-mono mb-4">{item.num}</div>
+                    <p className="text-sm font-light text-white/80 leading-relaxed">{item.text}</p>
+                  </div>
+                </FadeUp>
               ))}
             </div>
           </div>
@@ -190,11 +227,15 @@ export default function HimalayaPage() {
         {/* ══ ПРОГРАММА ══ */}
         <section className="bg-white py-16 sm:py-24 px-4 sm:px-8 lg:px-16">
           <div className="max-w-5xl mx-auto">
-            <span className="text-[10px] uppercase tracking-widest text-[#c9b896] font-mono block mb-6">Программа</span>
-            <h2 className="text-2xl sm:text-4xl font-light text-[#3a3a35] mb-4">15 дней трансформации в Гималаях</h2>
+            <FadeUp>
+              <span className="text-[10px] uppercase tracking-widest text-[#c9b896] font-mono block mb-6">Программа</span>
+              <h2 className="text-2xl sm:text-4xl font-light text-[#3a3a35] mb-4">15 дней трансформации в Гималаях</h2>
+            </FadeUp>
+            <FadeUp delay={150}>
             <p className="text-base font-light text-[#3a3a35]/70 leading-relaxed mb-10 max-w-2xl">
               Мы едем в места, в которые обычно непросто добраться западному человеку — в самые настоящие глубины Гималайских вершин. Практика пурна-йоги в древних местах силы в сочетании с активацией кундалини даёт результат, который невозможно получить по отдельности.
             </p>
+            </FadeUp>
 
             {/* Маршрут */}
             <div className="mb-10">
@@ -230,14 +271,16 @@ export default function HimalayaPage() {
                 { num: '04', title: 'Сатсанги', text: 'Чтение и обсуждение Хатха йога прадипика, Йога-сутры, Бхагавад Гита. Ответы на вопросы, разбор аспектов практики в жизни' },
                 { num: '05', title: 'Посещение святых мест', text: 'Ашрамы, храмы, Гомукх — исток Ганги. Места, где тысячи лет медитировали великие мудрецы' },
                 { num: '06', title: 'Рафтинг по Алакананде', text: 'Адреналин, живая природа и единение с горной рекой — включено в программу' },
-              ].map((item) => (
-                <div key={item.num} className="flex gap-5 p-5 sm:p-6 border border-[#e8e6e0] hover:border-[#c9b896] transition-colors">
-                  <div className="text-2xl font-light text-[#c9b896] font-mono shrink-0">{item.num}</div>
-                  <div>
-                    <div className="text-sm font-semibold text-[#3a3a35] mb-1">{item.title}</div>
-                    <div className="text-sm font-light text-[#3a3a35]/70 leading-relaxed">{item.text}</div>
+              ].map((item, i) => (
+                <FadeUp key={item.num} delay={i * 80}>
+                  <div className="flex gap-5 p-5 sm:p-6 border border-[#e8e6e0] hover:border-[#c9b896] transition-colors h-full">
+                    <div className="text-2xl font-light text-[#c9b896] font-mono shrink-0">{item.num}</div>
+                    <div>
+                      <div className="text-sm font-semibold text-[#3a3a35] mb-1">{item.title}</div>
+                      <div className="text-sm font-light text-[#3a3a35]/70 leading-relaxed">{item.text}</div>
+                    </div>
                   </div>
-                </div>
+                </FadeUp>
               ))}
             </div>
             <div className="mt-4 relative w-full aspect-video overflow-hidden">
@@ -254,15 +297,18 @@ export default function HimalayaPage() {
         {/* ══ ВЕДУЩИЕ ══ */}
         <section className="py-16 sm:py-24 px-4 sm:px-8 lg:px-16">
           <div className="max-w-5xl mx-auto">
-            <span className="text-[10px] uppercase tracking-widest text-[#c9b896] font-mono block mb-6">Ведущие</span>
-            <h2 className="text-2xl sm:text-4xl font-light text-[#3a3a35] mb-4">Кто проведёт вас через этот опыт</h2>
-            <p className="text-base font-light text-[#3a3a35]/70 mb-12 max-w-xl">
-              Когда встречаются два практика с таким опытом — это редкость. Обычно подобный формат доступен только на ретритах за €3000+.
-            </p>
+            <FadeUp>
+              <span className="text-[10px] uppercase tracking-widest text-[#c9b896] font-mono block mb-6">Ведущие</span>
+              <h2 className="text-2xl sm:text-4xl font-light text-[#3a3a35] mb-4">Кто проведёт вас через этот опыт</h2>
+              <p className="text-base font-light text-[#3a3a35]/70 mb-12 max-w-xl">
+                Когда встречаются два практика с таким опытом — это редкость. Обычно подобный формат доступен только на ретритах за €3000+.
+              </p>
+            </FadeUp>
 
             <div className="grid sm:grid-cols-2 gap-6 mb-8">
               {/* ВЛАД */}
-              <div className="bg-white border border-[#e8e6e0] overflow-hidden">
+              <FadeUp delay={100}>
+              <div className="bg-white border border-[#e8e6e0] overflow-hidden h-full">
                 <div className="relative aspect-[3/4]">
                   <Image
                     src="/images/about/IMG_6150.JPG"
@@ -297,9 +343,11 @@ export default function HimalayaPage() {
                   </blockquote>
                 </div>
               </div>
+              </FadeUp>
 
               {/* ДАРЬЯ */}
-              <div className="bg-white border border-[#e8e6e0] overflow-hidden">
+              <FadeUp delay={200}>
+              <div className="bg-white border border-[#e8e6e0] overflow-hidden h-full">
                 <div className="relative aspect-[3/4]">
                   <Image
                     src="/images/retrite/daria.jpg"
@@ -333,14 +381,17 @@ export default function HimalayaPage() {
                   </blockquote>
                 </div>
               </div>
+              </FadeUp>
             </div>
 
             {/* Тандем */}
+            <FadeUp>
             <div className="bg-[#3a3a35] text-white p-6 sm:p-8 text-center">
               <p className="text-sm sm:text-base font-light leading-relaxed text-white/90 max-w-2xl mx-auto">
                 Влад прошёл духовный путь через тело, спорт и строгую традицию — Дарья через сердце, чувствование и внутреннюю тишину. Два разных входа в одну и ту же реальность. Именно поэтому на этом ретрите найдёт себя каждый.
               </p>
             </div>
+            </FadeUp>
           </div>
         </section>
 
