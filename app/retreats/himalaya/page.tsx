@@ -345,7 +345,7 @@ export default function HimalayaPage() {
             <h2 className="text-2xl sm:text-4xl font-light text-[#3a3a35] mb-10">Как это было</h2>
             <div className="grid grid-cols-2 sm:grid-cols-3 gap-3 mb-6">
               {[
-                '/images/retrite/gallery/him0.png',
+                '/images/retrite/gallery/him6.jpg',
                 '/images/retrite/gallery/him1.jpg',
                 '/images/retrite/gallery/him2.jpg',
                 '/images/retrite/gallery/him3.jpg',
