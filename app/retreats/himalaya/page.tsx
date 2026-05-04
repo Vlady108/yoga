@@ -5,6 +5,9 @@ import Link from 'next/link';
 import Header from '@/app/components/Header';
 import Footer from '@/app/components/Footer';
 import { useState } from 'react';
+import { Oswald } from 'next/font/google';
+
+const oswald = Oswald({ subsets: ['cyrillic', 'latin'], weight: ['700'] });
 
 const TELEGRAM_VLAD = 'https://t.me/Vlady_108';
 const TELEGRAM_DASHA = 'https://t.me/dawa_wonder';
@@ -60,18 +63,24 @@ export default function HimalayaPage() {
               src="/images/retrite/himalaya-hero.png"
               alt="Йога-ретрит в Гималаях"
               fill
+              quality={100}
               className="object-cover object-center lg:object-[50%_50%]"
               priority
             />
             {/* Золотой заголовок поверх фото */}
             <div className="absolute inset-0 flex items-end pb-10 sm:pb-14 lg:pb-16 px-6 sm:px-10 lg:px-16">
               <h1
-                className="font-black uppercase leading-none tracking-tight text-[13vw] sm:text-[10vw] lg:text-[8vw]"
+                className={`${oswald.className} uppercase leading-[0.95] text-[13vw] sm:text-[10vw] lg:text-[8vw]`}
                 style={{
-                  color: '#D4A520',
-                  textShadow:
-                    '2px 2px 0 #8B5E0A, 4px 4px 0 #6B4508, 6px 6px 0 #4A2F04, 8px 8px 14px rgba(0,0,0,0.7)',
-                  fontFamily: '"Arial Black", "Impact", sans-serif',
+                  color: '#FFD046',
+                  textShadow: [
+                    '1px 1px 0 #C08800',
+                    '2px 2px 0 #B07800',
+                    '3px 3px 0 #A06800',
+                    '4px 4px 0 #905800',
+                    '5px 5px 0 #804800',
+                    '6px 6px 16px rgba(0,0,0,0.85)',
+                  ].join(', '),
                 }}
               >
                 ЙОГА-РЕТРИТ<br />В ГИМАЛАЯХ
