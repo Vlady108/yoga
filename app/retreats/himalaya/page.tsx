@@ -344,8 +344,17 @@ export default function HimalayaPage() {
             <span className="text-[10px] uppercase tracking-widest text-[#c9b896] font-mono block mb-6">Наши ретриты в Индии</span>
             <h2 className="text-2xl sm:text-4xl font-light text-[#3a3a35] mb-10">Как это было</h2>
             <div className="grid grid-cols-2 sm:grid-cols-3 gap-3 mb-6">
-              {[...Array(6)].map((_, i) => (
-                <PhImg key={i} label={`[ фото ${i + 1} ]`} aspect="aspect-square" className="w-full" />
+              {[
+                '/images/retrite/gallery/him0.png',
+                '/images/retrite/gallery/him1.jpg',
+                '/images/retrite/gallery/him2.jpg',
+                '/images/retrite/gallery/him3.jpg',
+                '/images/retrite/gallery/him4.jpg',
+                '/images/retrite/gallery/him5.jpg',
+              ].map((src, i) => (
+                <div key={i} className="relative aspect-square overflow-hidden">
+                  <Image src={src} alt={`Ретрит в Гималаях ${i + 1}`} fill className="object-cover hover:scale-105 transition-transform duration-500" />
+                </div>
               ))}
             </div>
             <PhVideo label="[ ВИДЕО — 30–60 сек с прошлого ретрита ]" className="w-full aspect-video" />
