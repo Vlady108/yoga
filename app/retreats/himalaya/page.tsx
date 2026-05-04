@@ -64,6 +64,24 @@ export default function HimalayaPage() {
               className="object-cover object-center"
               priority
             />
+            {/* Градиент снизу для читаемости текста */}
+            <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent" />
+            {/* Hero текст */}
+            <div className="absolute inset-0 flex flex-col justify-end pb-12 sm:pb-16 lg:pb-20 px-6 sm:px-10 lg:px-16">
+              <span className="text-[10px] uppercase tracking-widest text-[#c9b896] font-mono mb-4 block">
+                Кундалини йога ретрит · 1–15 июня 2026
+              </span>
+              <h1 className="text-3xl sm:text-5xl lg:text-6xl font-light text-white leading-tight mb-4 max-w-3xl">
+                Ретрит в Гималаях —<br />путь к истоку Ганги
+              </h1>
+              <p className="text-sm sm:text-base font-light text-white/80 max-w-xl leading-relaxed mb-8">
+                Пробуждение внутренней силы через работу с телом, дыханием, вниманием и энергией. 15 дней погружения в духовную реальность Гималаев.
+              </p>
+              <div className="flex flex-col sm:flex-row items-start sm:items-center gap-4">
+                <BookBtn />
+                <span className="text-white/60 text-xs font-mono">Группа до 12 человек · Осталось 6 мест</span>
+              </div>
+            </div>
           </div>
 
           {/* Meta bar */}
@@ -71,7 +89,7 @@ export default function HimalayaPage() {
             {[
               { label: 'Даты', val: '1–15 июня 2026' },
               { label: 'Длительность', val: '15 дней' },
-              { label: 'Группа', val: '13 человек' },
+              { label: 'Группа', val: '12 человек' },
               { label: 'Стоимость', val: '2 800€' },
             ].map((item) => (
               <div key={item.label} className="p-5 sm:p-6 border-r border-b border-[#e8e6e0] last:border-r-0">
@@ -150,19 +168,72 @@ export default function HimalayaPage() {
           </div>
         </section>
 
+        {/* ══ ДЛЯ КОГО ══ */}
+        <section className="bg-[#3a3a35] py-16 sm:py-24 px-4 sm:px-8 lg:px-16">
+          <div className="max-w-5xl mx-auto">
+            <span className="text-[10px] uppercase tracking-widest text-[#c9b896] font-mono block mb-6">Для кого</span>
+            <h2 className="text-2xl sm:text-4xl font-light text-white mb-10">Этот ретрит для вас, если вы хотите</h2>
+            <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
+              {[
+                { num: '01', text: 'Оздоровить и укрепить тело и все системы организма' },
+                { num: '02', text: 'Глубокую перезагрузку — вы чувствуете, что она необходима' },
+                { num: '03', text: 'Сделать сильный прогресс в духовной жизни' },
+                { num: '04', text: 'Научиться управлять своими состояниями и практикам саморегуляции' },
+                { num: '05', text: 'Найти решение в сложной жизненной ситуации' },
+                { num: '06', text: 'Раскрыть своё предназначение и понять, в каком направлении двигаться' },
+              ].map((item) => (
+                <div key={item.num} className="border border-white/10 p-6 hover:border-[#c9b896]/50 transition-colors">
+                  <div className="text-2xl font-light text-[#c9b896]/40 font-mono mb-4">{item.num}</div>
+                  <p className="text-sm font-light text-white/80 leading-relaxed">{item.text}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+
         {/* ══ ПРОГРАММА ══ */}
         <section className="bg-white py-16 sm:py-24 px-4 sm:px-8 lg:px-16">
           <div className="max-w-5xl mx-auto">
             <span className="text-[10px] uppercase tracking-widest text-[#c9b896] font-mono block mb-6">Программа</span>
-            <h2 className="text-2xl sm:text-4xl font-light text-[#3a3a35] mb-12">Как устроены 15 дней</h2>
-            <div className="grid sm:grid-cols-2 gap-4">
+            <h2 className="text-2xl sm:text-4xl font-light text-[#3a3a35] mb-4">15 дней трансформации в Гималаях</h2>
+            <p className="text-base font-light text-[#3a3a35]/70 leading-relaxed mb-10 max-w-2xl">
+              Мы едем в места, в которые обычно непросто добраться западному человеку — в самые настоящие глубины Гималайских вершин. Практика пурна-йоги в древних местах силы в сочетании с активацией кундалини даёт результат, который невозможно получить по отдельности.
+            </p>
+
+            {/* Маршрут */}
+            <div className="mb-10">
+              <div className="text-xs uppercase tracking-widest text-[#c9b896] font-mono mb-5">Маршрут</div>
+              <div className="space-y-0">
+                {[
+                  { dates: '1–3 июня', place: 'Рудрапраяг', note: 'Прибытие, адаптация, первые практики' },
+                  { dates: '4–11 июня', place: 'Агора', note: 'Базовый лагерь, ежедневные практики' },
+                  { dates: '', place: 'Трек: Ганготри → Бходжваса', note: '15 км' },
+                  { dates: '', place: 'Трек: Бходжваса → Гомукх → Тапован', note: '7,5 км · исток Ганги, 4500 м' },
+                  { dates: '', place: 'Трек: Тапован → Чидваса', note: '11 км' },
+                  { dates: '', place: 'Трек: Чидваса → Ганготри', note: '9,5 км · возвращение' },
+                  { dates: '12–13 июня', place: 'Рудрапраяг', note: 'Отдых после трека, интеграция, практика' },
+                  { dates: '14–15 июня', place: 'Выезд домой', note: 'Подведение итогов, прощание' },
+                ].map((item, i) => (
+                  <div key={i} className={`flex items-start gap-4 p-4 border-l-2 ${item.dates ? 'border-[#c9b896]' : 'border-[#c9b896]/30'} ml-2 mb-1`}>
+                    <div className="w-20 shrink-0 text-[10px] font-mono text-[#c9b896] uppercase leading-tight pt-0.5">{item.dates}</div>
+                    <div>
+                      <div className="text-sm font-medium text-[#3a3a35]">{item.place}</div>
+                      <div className="text-xs text-[#3a3a35]/50 font-light mt-0.5">{item.note}</div>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            {/* Что входит в программу */}
+            <div className="grid sm:grid-cols-2 gap-4 mb-8">
               {[
-                { num: '01', title: 'Утренняя практика', text: 'Пранаяма, медитация, асаны — каждый день на свежем воздухе в горах' },
-                { num: '02', title: 'Сатсанги', text: 'Беседы о философии йоги, ведических текстах, разборы вопросов' },
-                { num: '03', title: 'Трекинг', text: 'Священные места — ашрамы, храмы, горные тропы, водопады' },
-                { num: '04', title: 'Работа с кундалини', text: 'Активация и пробуждение в местах силы Гималаев' },
-                { num: '05', title: 'Рафтинг', text: 'По реке Алакананда — адреналин и живая природа' },
-                { num: '06', title: 'Свободное время', text: 'Для интеграции, личной практики и просто — быть' },
+                { num: '01', title: 'Пурна йога', text: 'Аутентичные практики из традиции кундалини и хатха-йоги. Асаны, дыхание, концентрация, бандхи, мудры, дришти — для подъёма энергии в высшие центры' },
+                { num: '02', title: 'Пранаяма на высоте 4000 м', text: 'Практика последовательностей дыхания и задержек в местах силы — опыт, который невозможно получить в городе' },
+                { num: '03', title: 'Пробуждение кундалини', text: 'Практика активации внутренней силы. Вы начнёте замечать работу и влияние энергий — и с этого момента начнётся ваш духовный путь' },
+                { num: '04', title: 'Сатсанги', text: 'Чтение и обсуждение Хатха йога прадипика, Йога-сутры, Бхагавад Гита. Ответы на вопросы, разбор аспектов практики в жизни' },
+                { num: '05', title: 'Посещение святых мест', text: 'Ашрамы, храмы, Гомукх — исток Ганги. Места, где тысячи лет медитировали великие мудрецы' },
+                { num: '06', title: 'Рафтинг по Алакананде', text: 'Адреналин, живая природа и единение с горной рекой — включено в программу' },
               ].map((item) => (
                 <div key={item.num} className="flex gap-5 p-5 sm:p-6 border border-[#e8e6e0] hover:border-[#c9b896] transition-colors">
                   <div className="text-2xl font-light text-[#c9b896] font-mono shrink-0">{item.num}</div>
@@ -173,7 +244,7 @@ export default function HimalayaPage() {
                 </div>
               ))}
             </div>
-            <div className="mt-8">
+            <div className="mt-4">
               <PhImg label="[ ФОТО — групповая практика, утренняя медитация в горах ]" className="w-full" />
             </div>
           </div>
