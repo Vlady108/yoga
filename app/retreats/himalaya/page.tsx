@@ -693,28 +693,12 @@ export default function HimalayaPage() {
             <p className="text-base sm:text-lg font-light text-white/70 mb-12 leading-relaxed">
               Если чувствуешь отклик — пиши в личные сообщения, чтобы обсудить детали.
             </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <a
-                href={TELEGRAM_VLAD}
-                target="_blank"
-                rel="noopener noreferrer"
-                onClick={() => { if (typeof fbq !== 'undefined') fbq('track', 'Lead'); }}
-                className="inline-flex items-center justify-center gap-3 px-10 py-5 bg-[#c9b896] text-[#3a3a35] hover:bg-white transition-all duration-300 font-medium tracking-wider text-sm"
-              >
-                <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
-                  <path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm5.562 8.248-1.97 9.289c-.145.658-.537.818-1.084.508l-3-2.21-1.447 1.394c-.16.16-.295.295-.605.295l.213-3.053 5.56-5.023c.242-.213-.054-.333-.373-.12L7.433 14.41l-2.962-.924c-.643-.204-.657-.643.136-.953l11.57-4.461c.537-.194 1.006.131.385.176z"/>
-                </svg>
-                Забронировать место
-              </a>
-              <a
-                href={TELEGRAM_DASHA}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center justify-center gap-3 px-10 py-5 border border-white/40 text-white hover:border-white transition-all duration-300 font-light tracking-wider text-sm"
-              >
-                Написать Дарье
-              </a>
-            </div>
+            <button
+              onClick={() => setShowModal(true)}
+              className="inline-flex items-center justify-center gap-3 px-10 py-5 bg-[#c9b896] text-[#3a3a35] hover:bg-white transition-all duration-300 font-medium tracking-wider text-sm"
+            >
+              Забронировать место
+            </button>
             <p className="mt-8 text-white/40 font-mono text-xs">Ответим лично и расскажем все детали</p>
           </div>
         </section>
