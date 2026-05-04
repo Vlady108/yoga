@@ -60,7 +60,7 @@ export default function HimalayaPage() {
               src="/images/retrite/himalaya-hero.png"
               alt="Йога-ретрит в Гималаях"
               fill
-              className="object-cover"
+              className="object-cover object-top"
               priority
             />
           </div>
