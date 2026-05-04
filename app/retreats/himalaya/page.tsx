@@ -60,9 +60,23 @@ export default function HimalayaPage() {
               src="/images/retrite/himalaya-hero.png"
               alt="Йога-ретрит в Гималаях"
               fill
-              className="object-cover object-center lg:object-[50%_90%]"
+              className="object-cover object-center lg:object-[50%_50%]"
               priority
             />
+            {/* Золотой заголовок поверх фото */}
+            <div className="absolute inset-0 flex items-end pb-10 sm:pb-14 lg:pb-16 px-6 sm:px-10 lg:px-16">
+              <h1
+                className="font-black uppercase leading-none tracking-tight text-[13vw] sm:text-[10vw] lg:text-[8vw]"
+                style={{
+                  color: '#D4A520',
+                  textShadow:
+                    '2px 2px 0 #8B5E0A, 4px 4px 0 #6B4508, 6px 6px 0 #4A2F04, 8px 8px 14px rgba(0,0,0,0.7)',
+                  fontFamily: '"Arial Black", "Impact", sans-serif',
+                }}
+              >
+                ЙОГА-РЕТРИТ<br />В ГИМАЛАЯХ
+              </h1>
+            </div>
           </div>
 
           {/* Meta bar */}
