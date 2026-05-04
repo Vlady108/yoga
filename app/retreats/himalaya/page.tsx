@@ -5,9 +5,6 @@ import Link from 'next/link';
 import Header from '@/app/components/Header';
 import Footer from '@/app/components/Footer';
 import { useState } from 'react';
-import { Montserrat } from 'next/font/google';
-
-const montserrat = Montserrat({ subsets: ['cyrillic', 'latin'], weight: ['900'] });
 
 const TELEGRAM_VLAD = 'https://t.me/Vlady_108';
 const TELEGRAM_DASHA = 'https://t.me/dawa_wonder';
@@ -60,28 +57,13 @@ export default function HimalayaPage() {
         <section className="relative pt-20">
           <div className="relative w-full aspect-[1015/571] lg:aspect-auto lg:h-[calc(100vh-80px)]">
             <Image
-              src="/images/retrite/himalaya-hero.png"
+              src="/images/retrite/himalaya-hero.jpg"
               alt="Йога-ретрит в Гималаях"
               fill
               quality={100}
-              className="object-cover object-center lg:object-[50%_50%]"
+              className="object-cover object-center"
               priority
             />
-            {/* Золотой заголовок поверх фото */}
-            <div className="absolute inset-0 flex items-end pb-10 sm:pb-14 lg:pb-16 px-6 sm:px-10 lg:px-16">
-              <h1
-                className={`${montserrat.className} uppercase leading-[0.92] text-[13vw] sm:text-[10vw] lg:text-[8vw]`}
-                style={{
-                  background: 'linear-gradient(180deg, #FFE54A 0%, #C8900A 100%)',
-                  WebkitBackgroundClip: 'text',
-                  WebkitTextFillColor: 'transparent',
-                  backgroundClip: 'text',
-                  filter: 'drop-shadow(0 3px 12px rgba(0,0,0,0.6))',
-                }}
-              >
-                ЙОГА-РЕТРИТ<br />В ГИМАЛАЯХ
-              </h1>
-            </div>
           </div>
 
           {/* Meta bar */}
