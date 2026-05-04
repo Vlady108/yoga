@@ -64,10 +64,10 @@ export default function HimalayaPage() {
               className="object-cover object-center"
               priority
             />
-            {/* Градиент + CTA */}
+            {/* Градиент + CTA — только на sm+ */}
             <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent" />
-            <div className="absolute inset-0 flex flex-col justify-end pb-12 sm:pb-16 lg:pb-20 px-6 sm:px-10 lg:px-16">
-              <div className="flex flex-col sm:flex-row items-start sm:items-center gap-4">
+            <div className="absolute inset-0 hidden sm:flex flex-col justify-end pb-16 lg:pb-20 px-10 lg:px-16">
+              <div className="flex flex-row items-center gap-4">
                 <BookBtn />
                 <span className="text-white/70 text-xs font-mono">Группа до 12 человек · Осталось 6 мест</span>
               </div>
@@ -87,6 +87,12 @@ export default function HimalayaPage() {
                 <div className="text-sm sm:text-base font-medium text-[#3a3a35]">{item.val}</div>
               </div>
             ))}
+          </div>
+
+          {/* CTA под метабаром — только мобайл */}
+          <div className="sm:hidden mx-4 mt-4 flex flex-col gap-3">
+            <BookBtn className="w-full justify-center" />
+            <span className="text-[#3a3a35]/50 text-xs font-mono text-center">Группа до 12 человек · Осталось 6 мест</span>
           </div>
         </section>
 
