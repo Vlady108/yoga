@@ -542,9 +542,9 @@ export default function HimalayaPage() {
                   <video
                     src={item.src}
                     className="absolute inset-0 w-full h-full object-cover"
-                    muted
-                    loop
+                    controls
                     playsInline
+                    preload="metadata"
                   />
                   {item.name && (
                     <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent flex flex-col justify-end p-5">
