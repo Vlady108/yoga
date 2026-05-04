@@ -289,7 +289,14 @@ export default function HimalayaPage() {
 
               {/* ДАРЬЯ */}
               <div className="bg-white border border-[#e8e6e0] overflow-hidden">
-                <PhImg label="[ фото Дарьи — живое, из Индии или ретрита ]" aspect="aspect-[4/3]" className="w-full" />
+                <div className="relative aspect-[4/3]">
+                  <Image
+                    src="/images/retrite/daria.jpg"
+                    alt="Дарья Смирнова"
+                    fill
+                    className="object-cover object-top"
+                  />
+                </div>
                 <div className="p-6 sm:p-8">
                   <h3 className="text-xl font-light text-[#3a3a35] mb-1">Дарья Смирнова</h3>
                   <span className="text-[10px] uppercase tracking-widest text-[#c9b896] font-mono block mb-5">Основательница Сандхи-Хилинг</span>
