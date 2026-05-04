@@ -64,22 +64,12 @@ export default function HimalayaPage() {
               className="object-cover object-center"
               priority
             />
-            {/* Градиент снизу для читаемости текста */}
-            <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent" />
-            {/* Hero текст */}
+            {/* Градиент + CTA */}
+            <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent" />
             <div className="absolute inset-0 flex flex-col justify-end pb-12 sm:pb-16 lg:pb-20 px-6 sm:px-10 lg:px-16">
-              <span className="text-[10px] uppercase tracking-widest text-[#c9b896] font-mono mb-4 block">
-                Кундалини йога ретрит · 1–15 июня 2026
-              </span>
-              <h1 className="text-3xl sm:text-5xl lg:text-6xl font-light text-white leading-tight mb-4 max-w-3xl">
-                Ретрит в Гималаях —<br />путь к истоку Ганги
-              </h1>
-              <p className="text-sm sm:text-base font-light text-white/80 max-w-xl leading-relaxed mb-8">
-                Пробуждение внутренней силы через работу с телом, дыханием, вниманием и энергией. 15 дней погружения в духовную реальность Гималаев.
-              </p>
               <div className="flex flex-col sm:flex-row items-start sm:items-center gap-4">
                 <BookBtn />
-                <span className="text-white/60 text-xs font-mono">Группа до 12 человек · Осталось 6 мест</span>
+                <span className="text-white/70 text-xs font-mono">Группа до 12 человек · Осталось 6 мест</span>
               </div>
             </div>
           </div>
