@@ -77,14 +77,21 @@ function ContactModal({ onClose }: { onClose: () => void }) {
     e.preventDefault();
     setStatus('sending');
     try {
-      await fetch('/api/contact', {
+      const res = await fetch('/api/contact', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ name, phone, channels }),
       });
+      const data = await res.json();
+      if (!res.ok) {
+        console.error('API error:', data.error);
+        setStatus('error');
+        return;
+      }
       if (typeof fbq !== 'undefined') fbq('track', 'Lead');
       setStatus('done');
-    } catch {
+    } catch (err) {
+      console.error('Fetch error:', err);
       setStatus('error');
     }
   };

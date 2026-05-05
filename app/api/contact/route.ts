@@ -27,12 +27,18 @@ export async function POST(request: NextRequest) {
     <p style="color:#999;font-size:12px">Ретрит в Гималаях · 1–15 июня 2026</p>
   `;
 
-  await transporter.sendMail({
-    from: `"Yoga with Vlady" <${process.env.SMTP_USER}>`,
-    to: ['yevgen.stadnyk@gmail.com', 'vladybookings@gmail.com'],
-    subject: `Заявка на ретрит: ${name}`,
-    html,
-  });
+  try {
+    await transporter.sendMail({
+      from: `"Yoga with Vlady" <${process.env.SMTP_USER}>`,
+      to: ['yevgen.stadnyk@gmail.com', 'vladybookings@gmail.com'],
+      subject: `Заявка на ретрит: ${name}`,
+      html,
+    });
+    console.log('Email sent OK');
+  } catch (err) {
+    console.error('SMTP error:', err);
+    return NextResponse.json({ error: String(err) }, { status: 500 });
+  }
 
   return NextResponse.json({ success: true });
 }
