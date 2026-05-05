@@ -547,7 +547,7 @@ export default function HimalayaPage() {
                     preload="metadata"
                   />
                   {item.name && (
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent flex flex-col justify-end p-5">
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent flex flex-col justify-end p-5 pointer-events-none">
                       <span className="text-[#c9b896] text-[10px] uppercase tracking-widest font-mono">{item.name}</span>
                     </div>
                   )}
