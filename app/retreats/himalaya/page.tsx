@@ -128,7 +128,7 @@ function ContactModal({ onClose }: { onClose: () => void }) {
                   required
                   value={phone}
                   onChange={e => setPhone(e.target.value)}
-                  placeholder="+371 / +380 / +49..."
+                  placeholder="+380 / +49 / +43..."
                   className="w-full border border-[#e8e6e0] px-4 py-3 text-sm font-light text-[#3a3a35] focus:outline-none focus:border-[#c9b896] transition-colors"
                 />
               </div>
