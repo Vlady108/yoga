@@ -68,13 +68,21 @@ function ContactModal({ onClose }: { onClose: () => void }) {
   const [name, setName] = useState('');
   const [phone, setPhone] = useState('');
   const [channels, setChannels] = useState<string[]>([]);
-  const [status, setStatus] = useState<'idle' | 'sending' | 'done' | 'error'>('idle');
+  const [status, setStatus] = useState<'idle' | 'sending' | 'done' | 'error' | 'no-channel'>('idle');
 
   const toggleChannel = (ch: string) =>
-    setChannels(prev => prev.includes(ch) ? prev.filter(c => c !== ch) : [...prev, ch]);
+    setChannels(prev => {
+      const next = prev.includes(ch) ? prev.filter(c => c !== ch) : [...prev, ch];
+      if (status === 'no-channel' && next.length > 0) setStatus('idle');
+      return next;
+    });
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+    if (channels.length === 0) {
+      setStatus('no-channel');
+      return;
+    }
     setStatus('sending');
     try {
       const res = await fetch('/api/contact', {
@@ -140,7 +148,9 @@ function ContactModal({ onClose }: { onClose: () => void }) {
                 />
               </div>
               <div>
-                <label className="text-[10px] uppercase tracking-widest text-[#3a3a35]/50 font-mono block mb-3">Как связаться</label>
+                <label className="text-[10px] uppercase tracking-widest text-[#3a3a35]/50 font-mono block mb-3">
+                  Как связаться <span className="text-red-500">*</span>
+                </label>
                 <div className="flex gap-3 flex-wrap">
                   {['WhatsApp', 'Telegram', 'Телефон'].map(ch => (
                     <button
@@ -150,13 +160,18 @@ function ContactModal({ onClose }: { onClose: () => void }) {
                       className={`px-4 py-2 text-xs border transition-all ${
                         channels.includes(ch)
                           ? 'bg-[#3a3a35] text-white border-[#3a3a35]'
-                          : 'border-[#e8e6e0] text-[#3a3a35]/60 hover:border-[#c9b896]'
+                          : status === 'no-channel'
+                            ? 'border-red-400 text-[#3a3a35]/60 hover:border-[#c9b896]'
+                            : 'border-[#e8e6e0] text-[#3a3a35]/60 hover:border-[#c9b896]'
                       }`}
                     >
                       {ch}
                     </button>
                   ))}
                 </div>
+                {status === 'no-channel' && (
+                  <p className="text-red-500 text-xs mt-2 font-light">Выберите хотя бы один способ связи</p>
+                )}
               </div>
               <button
                 type="submit"
