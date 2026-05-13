@@ -206,7 +206,7 @@ export default function HimalayaPage() {
         <section className="relative pt-20">
           <div className="relative w-full aspect-[1015/571] lg:aspect-auto lg:h-[calc(100vh-80px)]">
             <Image
-              src="/images/retrite/hero-yoga.jpg"
+              src="/images/retrite/himalaya-hero.jpg"
               alt="Йога-ретрит в Гималаях"
               fill
               quality={100}
