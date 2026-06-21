@@ -2,7 +2,7 @@ import { NextRequest, NextResponse } from 'next/server';
 import nodemailer from 'nodemailer';
 
 export async function POST(request: NextRequest) {
-  const { name, phone, channels } = await request.json();
+  const { name, phone, channels, retreat } = await request.json();
 
   if (!name || !phone) {
     return NextResponse.json({ error: 'Заполните все поля' }, { status: 400 });
@@ -17,6 +17,9 @@ export async function POST(request: NextRequest) {
   });
 
   const channelText = channels?.length ? channels.join(', ') : 'не указан';
+  const retreatText = typeof retreat === 'string' && retreat.trim()
+    ? retreat.trim()
+    : 'Ретрит в Гималаях · 1–15 июня 2026';
 
   const html = `
     <h2>Новая заявка с сайта vladyoga.com</h2>
@@ -24,7 +27,7 @@ export async function POST(request: NextRequest) {
     <p><strong>Телефон:</strong> ${phone}</p>
     <p><strong>Способ связи:</strong> ${channelText}</p>
     <hr/>
-    <p style="color:#999;font-size:12px">Ретрит в Гималаях · 1–15 июня 2026</p>
+    <p style="color:#999;font-size:12px">${retreatText}</p>
   `;
 
   try {
