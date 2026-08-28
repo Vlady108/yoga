@@ -15,9 +15,8 @@
 
   var LANG = (document.documentElement.lang || 'ru').slice(0, 2) === 'uk' ? 'uk' : 'ru';
   var TG_HUMAN = 'https://t.me/dawa_wonder';
-  var TG_BOT = LANG === 'uk'
-    ? 'https://t.me/sandhi_healing_bot?start=698dd324a0ce051f680cf100'
-    : 'https://t.me/sandhi_healing_ru_bot?start=6a0368912bb6a35c630a6f0e';
+  /* один бот на оба языка — он сам определяет, что ответить */
+  var TG_BOT = 'https://t.me/KundaliMa_bot';
 
   /* ---------- интерфейсные строки ---------- */
   var T = {
