@@ -181,6 +181,9 @@ header.stuck{background:rgba(13,12,11,.9);backdrop-filter:blur(14px);border-bott
 .vplay:hover .rr{background:var(--gold);color:var(--ink)}
 @media(max-width:900px){.vplay{display:none}}
 
+.hero-price{position:relative;z-index:3;margin:8px 0 30px;font-family:"Oswald",sans-serif;
+  font-weight:600;font-size:clamp(26px,3.2vw,38px);color:var(--gold)}
+
 .hero-foot{position:relative;z-index:5;display:grid;grid-template-columns:1fr auto 1fr;
   gap:24px;align-items:end;padding-bottom:26px}
 .hero-foot .l{max-width:290px}
@@ -508,22 +511,11 @@ footer a:hover{color:var(--gold)}
       <span class="d hl" data-split>Тонке</span>
     </div>
 
-    <div class="hero-stage">
-      <figure class="portrait" style="margin:0">
-        <video id="heroVideo" src="assets/hero-loop.mp4" poster="assets/hero-poster.jpg"
-               muted loop playsinline autoplay preload="metadata"
-               disablepictureinpicture aria-label="Відео про курс"></video>
-        <span class="v-badge">Дивитись повністю</span>
-        <button class="v-tap" data-video type="button" aria-label="Дивитись повне відео зі звуком"><i>▶</i></button>
-      </figure>
-      <button class="vplay" data-video aria-label="Дивитись відео-привітання">
-        <span class="rr">▶</span> дивитись<br>зі звуком
-      </button>
-    </div>
-
     <div class="hero-type">
       <span class="d hl r" data-split data-outline="2">Бачення</span>
     </div>
+
+    <div class="hero-price">$680</div>
 
     <div class="hero-foot">
       <div class="l">
@@ -634,10 +626,6 @@ footer a:hover{color:var(--gold)}
         <h3>Робота<br>із собою</h3>
         <ul><li>Призма сприйняття й переконання</li><li>Внутрішня дитина, дитячі травми</li>
           <li>Родова енергія та карма</li><li>Милість як внутрішня опора</li></ul></div>
-      <div class="c c--violet rv" style="--d:240ms"><div class="n">04 / ДОХІД</div>
-        <h3>Професія<br>та заробіток</h3>
-        <ul><li>Готова система монетизації</li><li>Ціни й пакетування послуг</li>
-          <li>Скрипти, шаблони, документи</li><li>Сертифікат і спільнота</li></ul></div>
     </div>
   </div>
 </section>
@@ -667,7 +655,7 @@ footer a:hover{color:var(--gold)}
     </div>
 
     <div class="split sp-dark rv" style="--d:100ms">
-      <div class="pic" style="order:0"><img src="https://sandhi.vladyoga.com/4-m622c1x2.jpg" alt="Владислав Чангелія" loading="lazy"></div>
+      <div class="pic" style="order:0"><img src="assets/vladislav.jpg" alt="Владислав Чангелія" loading="lazy"></div>
       <div class="txt">
         <span class="tag">Футболіст, який став йогом</span>
         <h3 style="margin-top:14px;font-size:clamp(26px,3.4vw,42px)">Владислав<br>Чангелія</h3>
@@ -918,8 +906,9 @@ footer a:hover{color:var(--gold)}
     </div>
     <div>
       <span class="tag">Контакти</span>
-      <p style="margin-top:10px;font-size:13.5px">Telegram:
+      <p style="margin-top:10px;font-size:13.5px">Telegram:<br>
         <a href="https://t.me/dawa_wonder" style="color:var(--cream)">@dawa_wonder</a><br>
+        <a href="https://t.me/Vlady_108" style="color:var(--cream)">@Vlady_108</a><br>
         <a href="ru.html">Русская версия</a></p>
     </div>
   </div>
